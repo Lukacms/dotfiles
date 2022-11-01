@@ -1,0 +1,72 @@
+{
+  "header": {
+    "prefix": "header_c",
+    "body": [
+      "/*",
+      "** EPITECH PROJECT, 2020",
+      "** ${1:ProjectName}",
+      "** File description:",
+      "** ${2:FileDescription}",
+      "*/",
+      "",
+      "$0"
+    ],
+    "description": "Code snippet for header"
+  },
+  "header_hpp": {
+    "prefix": "header_h",
+    "body": [
+      "/*",
+      "** EPITECH PROJECT, 2020",
+      "** ${1:ProjectName}",
+      "** File description:",
+      "** ${2:FileDescription}",
+      "*/",
+      "",
+      "#ifndef $3",
+      "#define $3",
+      "$0",
+      "#endif /* !$3 */",
+      ""
+    ],
+    "description": "Code snippet for header"
+  },
+  "main_": {
+    "prefix": "main_",
+    "body": [
+      "int main(int ac, char *const *const av) {",
+      "$0",
+      "    return 0;",
+      "}"
+    ]
+  },
+  "main": {
+    "prefix": "main",
+    "body": ["int main(void) {", "    return 0;", "}"]
+  },
+  "while": {
+    "prefix": "while",
+    "body": ["while ($1)", "{", "  $0", "}"],
+    "description": ""
+  },
+  "if": {
+    "prefix": "if",
+    "body": ["if ($1)", "{", "  $0", "}"],
+    "description": "Code snippet for if statement"
+  },
+  "else": {
+    "prefix": "else",
+    "body": ["else", "{", "  $0", "}"],
+    "description": "Code snippet for else statement"
+  },
+  "else if": {
+    "prefix": "else if",
+    "body": ["else if ($1)", "{", "  $0", "}"],
+    "description": "Code snippet for else-if statement"
+  },
+  "Test()": {
+    "prefix": "Test",
+    "body": ["Test(${1:function name}, ${2:test description})", "{", "$0", "}"],
+    "description": "Test criterion"
+  }
+}

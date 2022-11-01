@@ -1,0 +1,30 @@
+{
+  "header": {
+    "prefix": "header_py",
+    "body": [
+      ""
+    ],
+    "description": "code snuppet for python header"
+  },
+  "rich print": {
+    "prefix": "frich",
+    "body": [
+      "from rich import print as rprint"
+    ],
+    "description": ""
+  },
+  "pandas import": {
+    "prefix": "ipd",
+    "body": [
+      "import pandas as pd"
+    ],
+    "description": ""
+  },
+  "numpy import": {
+    "prefix": "inp",
+    "body": [
+      "import numpy as np"
+    ],
+    "description": ""
+  }
+}

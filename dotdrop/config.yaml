@@ -1,0 +1,37 @@
+config:
+  backup: true
+  banner: true
+  create: true
+  dotpath: ../dotfiles
+  ignoreempty: false
+  keepdot: false
+  longkey: false
+  showdiff: false
+  workdir: ~/.config/dotdrop
+dotfiles:
+  d_polybar:
+    dst: ~/.config/polybar
+    src: config/polybar
+  f_vimrc:
+    dst: ~/.vimrc
+    src: vimrc
+  f_xinitrc:
+    dst: ~/.xinitrc
+    src: xinitrc
+  d_nvim:
+    src: config/nvim
+    dst: ~/.config/nvim
+profiles:
+  home:
+    dotfiles:
+    - f_vimrc
+    - f_xinitrc
+    - d_polybar
+  lukac-laptop:
+    dotfiles:
+    - f_vimrc
+    - f_xinitrc
+    - d_nvim
+  /home/lukac/dotfiles/dotdrop/config.yaml:
+    dotfiles:
+    - d_nvim
