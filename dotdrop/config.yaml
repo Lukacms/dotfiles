@@ -21,6 +21,18 @@ dotfiles:
   d_nvim:
     src: config/nvim
     dst: ~/.config/nvim
+  f_bashrc:
+    src: bashrc
+    dst: ~/.bashrc
+  f_gitconfig:
+    src: gitconfig
+    dst: ~/.gitconfig
+  f_clang-format_c:
+    src: clang-format_c
+    dst: ~/.clang-format_c
+  f_clang-tidy:
+    src: clang-tidy
+    dst: ~/.clang-tidy
 profiles:
   home:
     dotfiles:
@@ -35,3 +47,7 @@ profiles:
   /home/lukac/dotfiles/dotdrop/config.yaml:
     dotfiles:
     - d_nvim
+    - f_bashrc
+    - f_gitconfig
+    - f_clang-format_c
+    - f_clang-tidy

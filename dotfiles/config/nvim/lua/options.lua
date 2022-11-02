@@ -15,6 +15,7 @@ opt.wrap = false -- Display long lines as just one line
 opt.foldlevel = 99
 opt.foldlevelstart = 99 -- Minimum number of screen line below and above the cursor
 opt.foldenable = true
+opt.colorcolumn = "80"
 
 opt.termguicolors = true -- Set colorscheme
 

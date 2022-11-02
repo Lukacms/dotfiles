@@ -1,2 +1,3 @@
 # dotfiles
-My personal linux dotfiles
+
+Linux dotfiles using dotdrop

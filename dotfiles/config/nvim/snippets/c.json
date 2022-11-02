@@ -34,7 +34,7 @@
   "main_": {
     "prefix": "main_",
     "body": [
-      "int main(int ac, char *const *const av) {",
+      "int main(int ac, char *const av[]) {",
       "$0",
       "    return 0;",
       "}"

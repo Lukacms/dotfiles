@@ -1,0 +1,61 @@
+Language:                                   Cpp
+AlignAfterOpenBracket:                      DontAlign
+AlignConsecutiveAssignments:                false
+AlignConsecutiveDeclarations:               false
+AlignEscapedNewlines:                       Left
+AlignOperands:                              true
+AlignTrailingComments:                      true
+AllowAllParametersOfDeclarationOnNextLine:  true
+AllowShortBlocksOnASingleLine:              false
+AllowShortFunctionsOnASingleLine:           None
+AllowShortIfStatementsOnASingleLine:        false
+AllowShortLoopsOnASingleLine:               false
+BinPackArguments:                           true
+BinPackParameters:                          true
+BreakBeforeBraces:                          Custom
+BraceWrapping:
+    AfterEnum:                          true
+    AfterControlStatement:              false
+    AfterFunction:                      true
+    AfterStruct:                        true
+    AfterUnion:                         true
+    BeforeElse:                         false
+    SplitEmptyFunction:                 true
+    SplitEmptyRecord:                   true
+    SplitEmptyNamespace:                true
+BreakBeforeBinaryOperators:                 None
+BreakBeforeTernaryOperators:                true
+ColumnLimit:                                80
+ConstructorInitializerIndentWidth:          4
+ContinuationIndentWidth:                    4
+DerivePointerAlignment:                     false
+DisableFormat:                              false
+ExperimentalAutoDetectBinPacking:           false
+IndentCaseLabels:                           true
+IndentPPDirectives:                         AfterHash
+IndentWidth:                                4
+IndentWrappedFunctionNames:                 false
+KeepEmptyLinesAtTheStartOfBlocks:           false
+MaxEmptyLinesToKeep:                        1
+# PenaltyBreakBeforeFirstCallParameter:     1
+# PenaltyBreakComment:                      300
+# PenaltyBreakString:                       1000
+# PenaltyBreakFirstLessLess:                120
+# PenaltyExcessCharacter:                   1
+# PenaltyReturnTypeOnItsOwnLine:            1000
+PointerAlignment:                           Right
+SpaceAfterCStyleCast:                       false
+# SpaceAfterLogicalNot:                       false clang-format v9
+SpaceBeforeAssignmentOperators:             true
+SpaceBeforeParens:                          ControlStatements
+SpaceBeforeRangeBasedForLoopColon:          false
+SpaceInEmptyParentheses:                    false
+SpacesBeforeTrailingComments:               1
+SpacesInAngles:                             false
+SpacesInCStyleCastParentheses:              false
+SpacesInContainerLiterals:                  false
+SpacesInParentheses:                        false
+SpacesInSquareBrackets:                     false
+SortIncludes:                               true
+TabWidth:                                   4
+UseTab:                                     Never
