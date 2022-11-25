@@ -1,0 +1,60 @@
+(undo-tree-save-format-version . 1)
+"7753ee45ef37ca7f26fba02a8007422086c1647f"
+[nil nil nil nil (25147 24133 172111 96000) 0 nil]
+([nil nil ((1 . 86) (t . -1)) nil (25147 24133 172096 709000) 0 nil])
+([nil nil ((1 . 86) (";; EDE project cache file.
+;; This contains a list of projects you have visited.
+(
+)
+" . 1) (t 25147 24133 176566 285000)) nil (25147 24160 871583 363000) 0 nil])
+([nil nil ((1 . 86) (";; EDE project cache file.
+;; This contains a list of projects you have visited.
+(
+)
+" . 1) (t 25147 24160 876565 761000)) nil (25147 24214 491856 200000) 0 nil])
+([nil nil ((1 . 86) (";; EDE project cache file.
+;; This contains a list of projects you have visited.
+(
+)
+" . 1) (t 25147 24214 496564 743000)) nil (25147 24222 417340 511000) 0 nil])
+([nil nil ((1 . 86) (";; EDE project cache file.
+;; This contains a list of projects you have visited.
+(
+)
+" . 1) (t 25147 24222 423231 258000)) nil (25147 24376 160693 120000) 0 nil])
+([nil nil ((1 . 86) (";; EDE project cache file.
+;; This contains a list of projects you have visited.
+(
+)
+" . 1) (t 25147 24376 166561 683000)) nil (25147 24408 324538 28000) 0 nil])
+([nil nil ((1 . 86) (";; EDE project cache file.
+;; This contains a list of projects you have visited.
+(
+)
+" . 1) (t 25147 24408 323227 745000)) nil (25147 24434 3778 366000) 0 nil])
+([nil nil ((1 . 86) (";; EDE project cache file.
+;; This contains a list of projects you have visited.
+(
+)
+" . 1) (t 25147 24434 9893 926000)) nil (25147 24448 838606 931000) 0 nil])
+([nil nil ((1 . 86) (";; EDE project cache file.
+;; This contains a list of projects you have visited.
+(
+)
+" . 1) (t 25147 24448 843226 978000)) nil (25147 24558 707723 231000) 0 nil])
+([nil nil ((1 . 86) (";; EDE project cache file.
+;; This contains a list of projects you have visited.
+(
+)
+" . 1) (t 25147 24558 713224 899000)) nil (25147 24586 276329 488000) 0 nil])
+([nil nil ((1 . 86) (";; EDE project cache file.
+;; This contains a list of projects you have visited.
+(
+)
+" . 1) (t 25147 24586 283224 377000)) nil (25147 24610 316362 899000) 0 nil])
+([nil current ((1 . 86) (";; EDE project cache file.
+;; This contains a list of projects you have visited.
+(
+)
+" . 1) (t 25147 24610 323223 919000)) nil (25147 24698 329854 895000) 0 nil])
+nil

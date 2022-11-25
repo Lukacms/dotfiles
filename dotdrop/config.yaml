@@ -33,6 +33,13 @@ dotfiles:
   f_clang-tidy:
     src: clang-tidy
     dst: ~/.clang-tidy
+  f_emacs:
+    src: emacs
+    dst: ~/.emacs
+  d_emacs.d:
+    src: emacs.d
+    dst: ~/.emacs.d
+    chmod: '700'
 profiles:
   home:
     dotfiles:
@@ -51,3 +58,5 @@ profiles:
     - f_gitconfig
     - f_clang-format_c
     - f_clang-tidy
+    - f_emacs
+    - d_emacs.d

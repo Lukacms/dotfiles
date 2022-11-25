@@ -1,0 +1,26 @@
+;; Object semanticdb-project-database-file-1585e2c0fe6c
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file-1585e2c0fe6c"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table-1585e2c0fe4c"
+      :major-mode c-mode
+      :tags 
+        '( ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [81 90])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [91 111]))                  
+                :type "int")
+                nil [72 129]))          
+      :file "main.c"
+      :pointmax 130
+      :fsize 129
+      :lastmodtime '(25147 24375 829895 23000)
+      :unmatched-syntax '((symbol 82 . 87) (punctuation 81 . 82) (symbol 73 . 80) (punctuation 72 . 73) (symbol 82 . 86) (punctuation 81 . 82) (symbol 73 . 80) (punctuation 72 . 73) (symbol 82 . 85) (punctuation 81 . 82) (symbol 73 . 80) (punctuation 72 . 73) (symbol 82 . 84) (punctuation 81 . 82) (symbol 73 . 80) (punctuation 72 . 73) (symbol 82 . 83) (punctuation 81 . 82) (symbol 73 . 80) (punctuation 72 . 73) (punctuation 81 . 82) (symbol 73 . 80) (punctuation 72 . 73) (symbol 73 . 80) (punctuation 72 . 73) (symbol 73 . 80) (punctuation 72 . 73) (symbol 73 . 79) (punctuation 72 . 73) (symbol 73 . 78) (punctuation 72 . 73) (symbol 73 . 77) (punctuation 72 . 73) (symbol 73 . 76) (punctuation 72 . 73) (symbol 73 . 75) (punctuation 72 . 73) (symbol 73 . 74) (punctuation 72 . 73))))
+  :file "!home!lukac!Epitech!Tek1!stumper!sample!src!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

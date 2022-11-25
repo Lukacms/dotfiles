@@ -1,0 +1,1 @@
+("~/Epitech/Tek1/stumper/sample/")

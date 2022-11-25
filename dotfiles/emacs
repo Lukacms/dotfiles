@@ -1,0 +1,51 @@
+;;
+;; Epitech configuration
+;;
+
+(add-to-list 'load-path "~/.emacs.d/lisp")
+(load "site-start.d/epitech-init.el")
+(setq column-number-mode t)
+;; (global-font-lock-mode 0)
+(setq-default show-trailing-whitespace t)
+
+;; require final newline
+(setq-default require-final-newline t)
+
+(require 'package)
+(package-initialize) ;; initialisation de package
+ (add-to-list 'package-archives
+                 '("melpa" . "http://melpa.org/packages/"))
+
+(add-to-list 'load-path "/home/lukac/Softwares/neotree")
+    (require 'neotree)
+    (global-set-key [f8] 'neotree-toggle)
+
+;;completion
+(setq company-minimum-prefix-length 1
+      company-idle-delay 0.0) ;; default is 0.2
+
+;; matching parenthesis
+(add-to-list 'load-path "~/.emacs.d/lisp") ;; comment if autopair.el is in standard load path 
+(require 'autopair)
+(autopair-global-mode) ;; enable autopair in all buffers
+
+;; stop generating backup files
+(setq make-backup-files nil) ; stop creating backup~ files
+(setq auto-save-default nil) ; stop creating #autosave# files
+
+;; (add-to-list 'load-path "~/.emacs.d/emacs-c-ide-demo") ;; comment if autopair.el is in standard load path 
+;; (require 'init)
+
+;; completion in c
+;; ;; (add-hook 'c++-mode-hook 'irony-mode)
+;; (add-hook 'c-mode-hook 'irony-mode)
+;; ;; (add-hook 'objc-mode-hook 'irony-mode)
+
+;; (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
+;; have a line at 80 character
+(setq whitespace-style (quote (lines-tail))
+  whitespace-line-column 79)
+(global-whitespace-mode 1)
+(setq-default display-fill-column-indicator-column 79)
+(global-display-fill-column-indicator-mode 1)
