@@ -25,23 +25,13 @@
       company-idle-delay 0.0) ;; default is 0.2
 
 ;; matching parenthesis
-(add-to-list 'load-path "~/.emacs.d/lisp") ;; comment if autopair.el is in standard load path 
+(add-to-list 'load-path "~/.emacs.d/lisp") ;; comment if autopair.el is in standard load path
 (require 'autopair)
 (autopair-global-mode) ;; enable autopair in all buffers
 
 ;; stop generating backup files
 (setq make-backup-files nil) ; stop creating backup~ files
 (setq auto-save-default nil) ; stop creating #autosave# files
-
-;; (add-to-list 'load-path "~/.emacs.d/emacs-c-ide-demo") ;; comment if autopair.el is in standard load path 
-;; (require 'init)
-
-;; completion in c
-;; ;; (add-hook 'c++-mode-hook 'irony-mode)
-;; (add-hook 'c-mode-hook 'irony-mode)
-;; ;; (add-hook 'objc-mode-hook 'irony-mode)
-
-;; (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 
 ;; have a line at 80 character
 (setq whitespace-style (quote (lines-tail))
