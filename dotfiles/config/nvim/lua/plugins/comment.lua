@@ -1,10 +1,14 @@
 -- {{@@ header() @@}}
 
 return function()
-  require('Comment').setup({
-    ignore = '^$',
-    toggler = {
-      line = '<Space>/',
-    },
-  })
+	require("Comment").setup({
+		ignore = "^$",
+		mappings = {
+			basic = true,
+		},
+		toggler = {
+			line = "<Space>/",
+			-- block = "<C>/",
+		},
+	})
 end
