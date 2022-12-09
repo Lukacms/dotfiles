@@ -109,6 +109,9 @@ if ${use_color} ; then
 	alias gst='git status'
 	alias gaa='git add --all'
 	alias cl='clear'
+  alias commit-count='git log --oneline | wc -l '
+  alias commit-count-user='git shortlog -s'
+  alias nv=nvim
 
 else
 	if [[ ${EUID} == 0 ]] ; then
@@ -174,7 +177,7 @@ ex ()
 # . "$HOME/.cargo/env"
 
 export DENO_INSTALL="/home/lukac/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH:$HOME/data/Git-Shortcuts:$HOME/.vscode/extensions/james-yu.latex-workshop-8.28.0/"
+export PATH="$DENO_INSTALL/bin:$PATH:$HOME/data/Git-Shortcuts"
 export EDITOR="nvim"
 
 [ -f "/home/lukac/.ghcup/env" ] && source "/home/lukac/.ghcup/env" # ghcup-env
