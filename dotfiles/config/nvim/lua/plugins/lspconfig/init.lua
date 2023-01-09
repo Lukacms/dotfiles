@@ -9,8 +9,12 @@ return function()
 		require("plugins.lspconfig.clangd"),
 		require("plugins.lspconfig.sumneko_lua"),
 		require("plugins.lspconfig.texlab"),
+		-- require("plugins.lspconfig.cmake"),
+		require("lspconfig").cmake.setup({}),
+		-- require("plugins.lspconfig.hls"),
 		-- Require default config:
 		{ name = "bashls" },
+		{ name = "hls" },
 		{ name = "cssls" },
 		{ name = "dockerls" },
 		{ name = "html" },
