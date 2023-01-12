@@ -7,15 +7,18 @@ return function()
 
 	local servers = {
 		require("plugins.lspconfig.clangd"),
+		require("plugins.lspconfig.elsint"),
 		require("plugins.lspconfig.sumneko_lua"),
 		require("plugins.lspconfig.texlab"),
-		-- require("plugins.lspconfig.cmake"),
-		require("lspconfig").cmake.setup({}),
-		-- require("plugins.lspconfig.hls"),
+		-- require("lspconfig").cmake.setup({}),
+		-- require("plugins.lspconfig.asm"),
+		-- require("lspconfig").hls.setup({}),
 		-- Require default config:
 		{ name = "bashls" },
-		{ name = "hls" },
 		{ name = "cssls" },
+		{ name = "cmake" },
+		{ name = "hls" },
+		{ name = "jdtls" },
 		{ name = "dockerls" },
 		{ name = "html" },
 		{ name = "jsonls" },
@@ -24,6 +27,7 @@ return function()
 		{ name = "tailwindcss" },
 	}
 
+	require("plugins.lspconfig.asm")
 	require("plugins.lspconfig.null-ls")
 
 	capabilities.textDocument.completion.completionItem.snippetSupport = true

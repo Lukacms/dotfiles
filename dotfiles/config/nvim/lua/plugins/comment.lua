@@ -10,5 +10,11 @@ return function()
 			line = "<Space>/",
 			-- block = "<C>/",
 		},
+		opleader = {
+			---Line-comment keymap
+			line = "gc",
+			---Block-comment keymap
+			block = "gb",
+		},
 	})
 end
