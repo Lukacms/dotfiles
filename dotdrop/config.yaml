@@ -40,6 +40,9 @@ dotfiles:
     src: emacs.d
     dst: ~/.emacs.d
     chmod: '700'
+  f_clang-format_cpp:
+    src: clang-format_cpp
+    dst: ~/.clang-format_cpp
 profiles:
   home:
     dotfiles:
@@ -60,3 +63,4 @@ profiles:
     - f_clang-tidy
     - f_emacs
     - d_emacs.d
+    - f_clang-format_cpp

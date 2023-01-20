@@ -36,6 +36,7 @@ colors() {
 	done
 }
 
+# set -o vi # --> maybe, if I wanna have bash with vim shortcuts
 xset r rate 200 50
 
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion

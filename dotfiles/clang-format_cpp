@@ -19,9 +19,14 @@ AlwaysBreakTemplateDeclarations: 'No'
 BreakBeforeBinaryOperators: None
 BreakBeforeBraces: Linux
 BreakBeforeTernaryOperators: 'false'
-ColumnLimit: '80'
+ColumnLimit: '100'
 IndentWidth: '4'
-Language: ObjC
+IndentAccessModifiers: true
+IndentPPDirectives: BeforeHash
+Language: Cpp
+NamespaceIndentation: All
 SpacesBeforeTrailingComments: '1'
 TabWidth: '4'
 UseTab: Never
+
+...
