@@ -1,92 +1,148 @@
 {
-  "header": {
-    "prefix": "header_cpp",
-    "body": [
-      "/*",
-      "** EPITECH PROJECT, 2020",
-      "** ${1:ProjectName}",
-      "** File description:",
-      "** ${2:FileDescription}",
-      "*/",
-      "",
-      "$0"
-    ],
-    "description": "Code snippet for header"
-  },
-  "header_hpp": {
-    "prefix": "header_hpp",
-    "body": [
-      "/*",
-      "** EPITECH PROJECT, 2020",
-      "** ${1:ProjectName}",
-      "** File description:",
-      "** ${2:FileDescription}",
-      "*/",
-      "",
-      "#ifndef $3",
-      "#define $3",
-      "$0",
-      "#endif /* !$3 */",
-      ""
-    ],
-    "description": "Code snippet for header"
-  },
-  "class": {
-    "prefix": "class",
-    "body": [
-      "class ${1:ClassName} {",
-      "  public:",
-      "    $1() = default;",
-      "    $1($1 const& to_copy) = default;",
-      "    $1($1&& to_move) = default;",
-      "",
-      "    ~$1() = default;",
-      "",
-      "    $1& operator=($1 const& to_copy) = default;",
-      "",
-      "  private:",
-      "};",
-      ""
-    ],
-    "description": "Code snippet for class"
-  },
-  "ifndef": {
-    "prefix": "ifndef",
-    "body": ["#ifndef $1", "#define $1", "", "$0", "", "#endif /* !$1 */", ""],
-    "description": "Code snippet for header"
-  },
-
-  "main_": {
-    "prefix": "main_",
-    "body": ["int main(int argc, const char** argv) {", "    return 0;", "}"]
-  },
-  "main": {
-    "prefix": "main",
-    "body": ["int main() {", "    return 0;", "}"]
-  },
-  "while": {
-    "prefix": "while",
-    "body": ["while ($1)", "{", "  $0", "}"],
-    "description": ""
-  },
-  "if": {
-    "prefix": "if",
-    "body": ["if ($1)", "{", "  $0", "}"],
-    "description": "Code snippet for if statement"
-  },
-  "else": {
-    "prefix": "else",
-    "body": ["else", "{", "  $0", "}"],
-    "description": "Code snippet for else statement"
-  },
-  "else if": {
-    "prefix": "else if",
-    "body": ["else if ($1)", "{", "  $0", "}"],
-    "description": "Code snippet for else-if statement"
-  },
-  "Test()": {
-    "prefix": "Test",
-    "body": ["Test(${1:function name}, ${2:test description})", "{", "$0", "}"],
-    "description": "Test criterion"
-  }
+    "header": {
+        "prefix": "header_cpp",
+        "body": [
+            "/*",
+            "** EPITECH PROJECT, 2023",
+            "** $WORKSPACE_NAME",
+            "** File description:",
+            "** $TM_FILENAME_BASE",
+            "*/",
+            "",
+            "$0"
+        ],
+        "description": "Code snippet for header"
+    },
+    "header_hpp": {
+        "prefix": "header_hpp",
+        "body": [
+            "/*",
+            "** EPITECH PROJECT, 2023",
+            "** $WORKSPACE_NAME",
+            "** File description:",
+            "** $TM_FILENAME_BASE",
+            "*/",
+            "",
+            "#ifndef $3",
+            "#define $3",
+            "$0",
+            "#endif /* !$3 */",
+            ""
+        ],
+        "description": "Code snippet for header"
+    },
+    "header_hpp_": {
+        "prefix": "header_hpp_",
+        "body": [
+            "/*",
+            "** EPITECH PROJECT, 2023",
+            "** $WORKSPACE_NAME",
+            "** File description:",
+            "** $TM_FILENAME_BASE",
+            "*/",
+            "",
+            "#pragma once",
+            "$0",
+            ""
+        ],
+        "description": "Code snippet for header"
+    },
+    "class": {
+        "prefix": "class",
+        "body": [
+            "class ${1:ClassName} {",
+            "  public:",
+            "    $1() = default;",
+            "    $1($1 const& to_copy) = default;",
+            "    $1($1&& to_move) = default;",
+            "",
+            "    ~$1() = default;",
+            "",
+            "    $1& operator=($1 const& to_copy) = default;",
+            "",
+            "  private:",
+            "};",
+            ""
+        ],
+        "description": "Code snippet for class"
+    },
+    "ifndef": {
+        "prefix": "ifndef",
+        "body": [
+            "#ifndef $1",
+            "#define $1",
+            "",
+            "$0",
+            "",
+            "#endif /* !$1 */",
+            ""
+        ],
+        "description": "Code snippet for header"
+    },
+    "main_": {
+        "prefix": "main_",
+        "body": [
+            "int main(int argc, const char* argv[]) {",
+            "    return 0;",
+            "}"
+        ]
+    },
+    "main": {
+        "prefix": "main",
+        "body": [
+            "int main() {",
+            "    return 0;",
+            "}"
+        ]
+    },
+    "while": {
+        "prefix": "while",
+        "body": [
+            "while ($1)",
+            "{",
+            "  $0",
+            "}"
+        ],
+        "description": ""
+    },
+    "if": {
+        "prefix": "if",
+        "body": [
+            "if ($1)",
+            "{",
+            "  $0",
+            "}"
+        ],
+        "description": "Code snippet for if statement"
+    },
+    "else": {
+        "prefix": "else",
+        "body": [
+            "else",
+            "{",
+            "  $0",
+            "}"
+        ],
+        "description": "Code snippet for else statement"
+    },
+    "else if": {
+        "prefix": "else if",
+        "body": [
+            "else if ($1)",
+            "{",
+            "  $0",
+            "}"
+        ],
+        "description": "Code snippet for else-if statement"
+    },
+    "Test()": {
+        "prefix": "Test",
+        "body": [
+            "Test(${1:function name}, ${2:test description})",
+            "{",
+            "$0",
+            "}"
+        ],
+        "description": "Test criterion"
+    }
 }

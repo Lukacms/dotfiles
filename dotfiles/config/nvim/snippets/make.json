@@ -1,0 +1,45 @@
+{
+    "header": {
+        "prefix": "header_make",
+        "body": [
+            "##",
+            "## EPITECH PROJECT, 2023",
+            "## $RELATIVE_FILEPATH",
+            "## File description:",
+            "## $TM_FILENAME_BASE",
+            "##",
+            "",
+            "$0"
+        ]
+    },
+    "src_c": {
+        "prefix": "SRC_C",
+        "body": [
+            "SRC\t=\t$1",
+            "",
+            "OBJ\t=\t(SRC:.c=.o)",
+            "",
+            "$0"
+        ]
+    },
+    "src_cpp": {
+        "prefix": "SRC_CPP",
+        "body": [
+            "SRC\t=\t$1",
+            "",
+            "OBJ\t=\t(SRC:.cpp=.o)",
+            "",
+            "$0"
+        ]
+    },
+    "src_asm": {
+        "prefix": "SRC_ASM",
+        "body": [
+            "SRC\t=\t$1",
+            "",
+            "OBJ\t=\t(SRC:.asm=.o)",
+            "",
+            "$0"
+        ]
+    }
+}
