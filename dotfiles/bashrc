@@ -36,7 +36,7 @@ colors() {
 	done
 }
 
-# set -o vi # --> maybe, if I wanna have bash with vim shortcuts
+set -o vi # --> maybe, if I wanna have bash with vim shortcuts
 xset r rate 200 50
 
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
@@ -100,6 +100,9 @@ if ${use_color} ; then
 		branch=$(git branch 2> /dev/null | grep '^*' | colrm 1 2)
 	    PS1+=" [${EXIT}] ${BYel}\W ${BBlu}(${branch}) ${RCol}$ "
 	}
+    alias ashley='for i in {0..53}; do cat /dev/urandom | tr -dc '\''[:alpha:]'\'' | dd bs=1 count=236 status=none; done | lolcat --speed=10'
+    alias cmake_project='cmake .. -GNinja -DCMAKE_BUILD_TYPE=Build -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_EXPORT_COMPILE_COMMANDS=true'
+    alias make_build='rm -rf build ; mkdir build ; cd build'
 	alias ls='ls --color=auto'
 	alias grep='grep --colour=auto'
 	alias egrep='egrep --colour=auto'
@@ -109,6 +112,7 @@ if ${use_color} ; then
 	alias mr_clean="find -name *~ -delete -o -name '#*#' -delete"
 	alias gst='git status'
 	alias gaa='git add --all'
+	alias gp='git push'
 	alias cl='clear'
   alias commit-count='git log --oneline | wc -l '
   alias commit-count-user='git shortlog -s'
