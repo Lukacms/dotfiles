@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("options")
 require("mappings")
+require("settings")
 require("lazy").setup("plugins")
 require("highlights")
 require("lsp")
