@@ -47,7 +47,7 @@ return {
 			vim.g.vsnip_snippet_dir = "~/.config/nvim/snippets"
 
 			local map = require("utils").map
-			local options = { expr = true, noremap = false }
+			local options = { expr = true, noremap = true }
 
 			map("i", "<C-l>", 'vsnip#jumpable(1)  ? "<Plug>(vsnip-jump-next)" : "<C-l>"', options)
 			map("s", "<C-l>", 'vsnip#jumpable(1)  ? "<Plug>(vsnip-jump-next)" : "<C-l>"', options)
@@ -63,6 +63,7 @@ return {
 		dependencies = {
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-vsnip",
+			-- "L3MON4D3/LuaSnip",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-nvim-lsp",
 			"onsails/lspkind-nvim",
@@ -101,7 +102,8 @@ return {
 			return {
 				snippet = {
 					expand = function(args)
-						luasnip.lsp_expand(args.body)
+						-- luasnip.lsp_expand(args.body)
+						vim.fn["vsnip#anonymous"](args.body)
 					end,
 				},
 
@@ -110,6 +112,7 @@ return {
 						config = {
 							sources = {
 								{ name = "nvim_lsp" },
+								-- { name = "LuaSnip" },
 								{ name = "vsnip" },
 								{ name = "path" },
 								{ name = "buffer" },
@@ -124,6 +127,7 @@ return {
 
 				sources = {
 					{ name = "nvim_lsp" },
+					-- { name = "LuaSnip" },
 					{ name = "vsnip" },
 					{ name = "path" },
 					{ name = "buffer" },

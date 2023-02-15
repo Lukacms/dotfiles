@@ -52,4 +52,4 @@ vim.o.laststatus = 0
 
 vim.o.mouse = "" -- Disable mouse
 
-vim.o.equalalways = false -- splitted windows are not always the same size
+-- vim.o.equalalways = false -- splitted windows are not always the same size
