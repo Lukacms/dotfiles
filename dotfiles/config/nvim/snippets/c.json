@@ -4,7 +4,7 @@
         "body": [
             "/*",
             "** EPITECH PROJECT, 2023",
-            "** $WORKSPACE_NAME",
+            "** $TM_DIRECTORY",
             "** File description:",
             "** $TM_FILENAME_BASE",
             "*/",
@@ -18,7 +18,7 @@
         "body": [
             "/*",
             "** EPITECH PROJECT, 2023",
-            "** $WORKSPACE_NAME",
+            "** $TM_DIRECTORY",
             "** File description:",
             "** $TM_FILENAME_BASE",
             "*/",

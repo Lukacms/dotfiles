@@ -97,7 +97,7 @@ return {
 		opts = function()
 			local cmp = require("cmp")
 			local lspkind = require("lspkind")
-			local luasnip = require("luasnip")
+			-- local luasnip = require("luasnip")
 
 			return {
 				snippet = {
