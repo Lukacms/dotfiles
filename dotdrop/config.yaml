@@ -43,6 +43,19 @@ dotfiles:
   f_clang-format_cpp:
     src: clang-format_cpp
     dst: ~/.clang-format_cpp
+  d_kdedefaults:
+    src: config/kdedefaults
+    dst: ~/.config/kdedefaults
+  d_kitty:
+    src: config/kitty
+    dst: ~/.config/kitty
+  d_hypr:
+    src: config/hypr
+    dst: ~/.config/hypr
+  f_dolphinrc:
+    src: config/dolphinrc
+    dst: ~/.config/dolphinrc
+    chmod: '600'
 profiles:
   home:
     dotfiles:
@@ -64,3 +77,7 @@ profiles:
     - f_emacs
     - d_emacs.d
     - f_clang-format_cpp
+    - d_kdedefaults
+    - d_kitty
+    - d_hypr
+    - f_dolphinrc

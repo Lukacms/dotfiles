@@ -1,0 +1,37 @@
+[$Version]
+update_info=dolphin_detailsmodesettings.upd:rename-leading-padding
+
+[CreateDialog]
+LastMimeType=application/x-compressed-tar
+
+[ExtractDialog]
+DirHistory[$e]=$HOME/,$HOME/Epitech/Tek1/MUL/myrpg/assets/
+eDP-1 HDMI-1 Height 1920x1080=560
+eDP-1 HDMI-1 Width 1920x1080=1272
+eDP-1 Height 1920x1080=560
+eDP-1 Width 1920x1080=1280
+
+[General]
+Version=202
+ViewPropsTimestamp=2022,2,20,20,15,23.792
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+Recent Files[$e]=file:$HOME
+Recent URLs[$e]=file:$HOME/Epitech/Tek1/MUL/myrpg/assets/,file:$HOME/,file:$HOME/Downloads/
+detailViewIconSize=16
+
+[KPropertiesDialog]
+eDP-1 Height 1920x1080=588
+eDP-1 Width 1920x1080=469
+
+[MainWindow]
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+eDP-1 XPosition 1920x1080=735
+eDP-1 YPosition 1920x1080=92
+
+[Open-with settings]
+CompletionMode=1
+History=ka
