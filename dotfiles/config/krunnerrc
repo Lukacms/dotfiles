@@ -1,0 +1,6 @@
+[General]
+FreeFloating=true
+
+[PlasmaRunnerManager]
+migrated=true
+font=Noto Sans,12,-1,5,50,0,0,0,0,0

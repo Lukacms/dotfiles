@@ -56,6 +56,10 @@ dotfiles:
     src: config/dolphinrc
     dst: ~/.config/dolphinrc
     chmod: '600'
+  f_krunnerrc:
+    src: config/krunnerrc
+    dst: ~/.config/krunnerrc
+    chmod: '600'
 profiles:
   home:
     dotfiles:
@@ -81,3 +85,4 @@ profiles:
     - d_kitty
     - d_hypr
     - f_dolphinrc
+    - f_krunnerrc
