@@ -60,6 +60,9 @@ dotfiles:
     src: config/krunnerrc
     dst: ~/.config/krunnerrc
     chmod: '600'
+  d_rofi:
+    src: config/rofi
+    dst: ~/.config/rofi
 profiles:
   home:
     dotfiles:
@@ -86,3 +89,4 @@ profiles:
     - d_hypr
     - f_dolphinrc
     - f_krunnerrc
+    - d_rofi
