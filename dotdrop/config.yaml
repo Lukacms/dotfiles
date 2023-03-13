@@ -63,6 +63,21 @@ dotfiles:
   d_rofi:
     src: config/rofi
     dst: ~/.config/rofi
+  d_wofi:
+    src: config/wofi
+    dst: ~/.config/wofi
+  d_waybar:
+    src: config/waybar
+    dst: ~/.config/waybar
+  d_dunst:
+    src: config/dunst
+    dst: ~/.config/dunst
+  d_eww:
+    src: config/eww
+    dst: ~/.config/eww
+  d_autostart:
+    src: config/autostart
+    dst: ~/.config/autostart
 profiles:
   home:
     dotfiles:
@@ -90,3 +105,8 @@ profiles:
     - f_dolphinrc
     - f_krunnerrc
     - d_rofi
+    - d_wofi
+    - d_waybar
+    - d_dunst
+    - d_eww
+    - d_autostart
