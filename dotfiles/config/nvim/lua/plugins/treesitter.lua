@@ -35,7 +35,7 @@ return {
 				enable = true,
 			},
 			highlight = {
-				enable = true,
+				enable = false,
 			},
 			playground = {
 				enable = true,
