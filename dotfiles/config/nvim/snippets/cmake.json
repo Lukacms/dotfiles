@@ -1,0 +1,12 @@
+{
+    "header": {
+        "prefix": "header",
+        "body": [
+            "##",
+            "## CMakeLists: $WORKSPACE_FOLDER / $TM_DIRECTORY",
+            "##",
+            "",
+            "$0"
+        ]
+    }
+}

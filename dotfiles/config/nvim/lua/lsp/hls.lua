@@ -8,7 +8,8 @@ M.setup = function(on_attach, capabilities)
 		filetypes = { "haskell", "lhaskell" },
 		settings = {
 			haskell = {
-				formattingProvider = "stylish-haskell",
+				-- formattingProvider = "stylish-haskell",
+				formattingProvider = "ormolu",
 				cabalFormattingProvider = "cabalfmt",
 			},
 		},
