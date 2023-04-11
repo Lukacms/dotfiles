@@ -78,6 +78,18 @@ dotfiles:
   d_autostart:
     src: config/autostart
     dst: ~/.config/autostart
+  f_tmux.conf:
+    src: tmux.conf
+    dst: ~/tmux.conf
+  f_tmux-dark.conf:
+    src: tmux-dark.conf
+    dst: ~/tmux-dark.conf
+  f_tmux-light.conf:
+    src: tmux-light.conf
+    dst: ~/tmux-light.conf
+  d_alacritty:
+    src: config/alacritty
+    dst: ~/.config/alacritty
 profiles:
   home:
     dotfiles:
@@ -89,6 +101,10 @@ profiles:
     - f_vimrc
     - f_xinitrc
     - d_nvim
+    - f_tmux.conf
+    - f_tmux-dark.conf
+    - f_tmux-light.conf
+    - d_alacritty
   /home/lukac/dotfiles/dotdrop/config.yaml:
     dotfiles:
     - d_nvim
