@@ -105,6 +105,7 @@ profiles:
     - f_tmux-dark.conf
     - f_tmux-light.conf
     - d_alacritty
+    - d_kitty
   /home/lukac/dotfiles/dotdrop/config.yaml:
     dotfiles:
     - d_nvim
