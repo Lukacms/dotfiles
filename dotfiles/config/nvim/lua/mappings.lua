@@ -18,9 +18,9 @@ map("n", "T", ":tabnew<CR>")
 map("n", "C", ":tabclose<CR>")
 
 -- Map Alt+Arrows to move lines
-map("n", "<C-k>", ":m-2 <CR>==")
+map("n", "<C-h>", ":m-2 <CR>==")
 map("n", "<C-j>", ":m+ <CR>==")
-map("v", "<C-k>", ":m '<-2<CR>gv=gv")
+map("v", "<C-h>", ":m '<-2<CR>gv=gv")
 map("v", "<C-j>", ":m '>+1<CR>gv=gv")
 
 -- Resize buffer size

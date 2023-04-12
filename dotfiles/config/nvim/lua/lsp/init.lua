@@ -85,6 +85,7 @@ local servers_names = {
 	"elixirls",
 	"html",
 	"hls",
+	"java_language_server",
 	"jsonls",
 	"null-ls",
 	"pyright",

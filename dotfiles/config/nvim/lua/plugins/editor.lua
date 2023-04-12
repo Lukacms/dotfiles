@@ -112,7 +112,7 @@ return {
 					mappings = {
 						i = {
 							["<C-j>"] = actions.move_selection_next,
-							["<C-k>"] = actions.move_selection_previous,
+							["<C-h>"] = actions.move_selection_previous,
 							["<esc>"] = actions.close,
 						},
 					},
@@ -181,13 +181,23 @@ return {
 		},
 	},
 
-	{
+	--[[ {
 		"iamcco/markdown-preview.nvim",
 		build = function()
 			vim.fn["mkdp#util#install"]()
 		end,
 		ft = "markdown",
 	},
+	{
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		setup = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	}, ]]
+	{ "iamcco/markdown-preview.nvim" },
+	{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 
 	{
 		"folke/todo-comments.nvim",

@@ -7,6 +7,25 @@ return {
 			italic_comments = true,
 			color_overrides = {
 				vscLineNumber = "#D7BA7D",
+				vscFoldBackground = "#202d39",
+				-- Syntax colors
+				vscGray = "#808080",
+				vscViolet = "#646695",
+				vscBlue = "#569CD6",
+				vscAccentBlue = "#4FC1FE",
+				vscDarkBlue = "#223E55",
+				vscMediumBlue = "#18a2fe",
+				vscLightBlue = "#9CDCFE",
+				vscGreen = "#808080",
+				vscBlueGreen = "#4EC9B0",
+				vscLightGreen = "#B5CEA8",
+				vscRed = "#F44747",
+				vscOrange = "#CE9178",
+				vscLightRed = "#D16969",
+				vscYellowOrange = "#D7BA7D",
+				vscYellow = "#DCDCAA",
+				vscDarkYellow = "#FFA602",
+				vscPink = "#C586C0",
 			},
 			group_overrides = {
 				-- this supports the same val table as vim.api.nvim_set_hl
@@ -14,7 +33,7 @@ return {
 				Cursor = {
 					fg = "#646695",
 					bg = "#B5CEA8",
-					bold = true,
+					bold = false,
 				},
 			},
 		},

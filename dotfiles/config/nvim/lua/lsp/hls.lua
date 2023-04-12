@@ -9,8 +9,8 @@ M.setup = function(on_attach, capabilities)
 		settings = {
 			haskell = {
 				-- formattingProvider = "stylish-haskell",
-				formattingProvider = "ormolu",
-				cabalFormattingProvider = "cabalfmt",
+				--[[ formattingProvider = "",
+				cabalFormattingProvider = "cabalfmt", ]]
 			},
 		},
 	})
