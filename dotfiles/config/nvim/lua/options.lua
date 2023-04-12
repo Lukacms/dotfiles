@@ -50,6 +50,6 @@ vim.o.shell = "/usr/bin/env bash"
 vim.o.cmdheight = 1
 vim.o.laststatus = 0
 
-vim.o.mouse = "" -- Disable mouse
+vim.o.mouse = vim.o.mouse .. "a"
 
 -- vim.o.equalalways = false -- splitted windows are not always the same size
