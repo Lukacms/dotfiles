@@ -90,6 +90,9 @@ dotfiles:
   d_alacritty:
     src: config/alacritty
     dst: ~/.config/alacritty
+  d_neofetch:
+    src: config/neofetch
+    dst: ~/.config/neofetch
 profiles:
   home:
     dotfiles:
@@ -106,6 +109,8 @@ profiles:
     - f_tmux-light.conf
     - d_alacritty
     - d_kitty
+    - f_bashrc
+    - d_neofetch
   /home/lukac/dotfiles/dotdrop/config.yaml:
     dotfiles:
     - d_nvim

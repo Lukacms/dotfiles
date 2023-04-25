@@ -36,6 +36,7 @@ colors() {
 	done
 }
 
+neofetch
 set -o vi # --> maybe, if I wanna have bash with vim shortcuts
 xset r rate 200 50
 
@@ -102,6 +103,8 @@ if ${use_color} ; then
 	}
     alias ashley='for i in {0..53}; do cat /dev/urandom | tr -dc '\''[:alpha:]'\'' | dd bs=1 count=236 status=none; done | lolcat --speed=10'
     alias cmake_project='cmake .. -GNinja -DCMAKE_BUILD_TYPE=Build -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_EXPORT_COMPILE_COMMANDS=true'
+    alias cmakegcc='cmake .. -DCMAKE_BUILD_TYPE=Build -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_EXPORT_COMPILE_COMMANDS=true'
+    alias cmake_project_debug='cmake .. -GNinja -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_EXPORT_COMPILE_COMMANDS=true'
     alias make_build='rm -rf build ; mkdir build ; cd build'
 	alias ls='ls --color=auto'
 	alias grep='grep --colour=auto'
@@ -112,8 +115,11 @@ if ${use_color} ; then
 	alias mr_clean="find -name *~ -delete -o -name '#*#' -delete"
 	alias gst='git status'
 	alias gaa='git add --all'
+    alias gc='git commit'
 	alias gp='git push'
 	alias cl='clear'
+    alias souris='sudo modprobe -r i2c_hid_acpi && sudo modprobe i2c_hid_acpi'
+    alias speed='xset r rate 200 50'
   alias commit-count='git log --oneline | wc -l '
   alias commit-count-user='git shortlog -s'
   alias nv=nvim
@@ -184,5 +190,6 @@ ex ()
 export DENO_INSTALL="/home/lukac/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH:$HOME/data/Git-Shortcuts"
 export EDITOR="nvim"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/Epitech/Tek2/NWP/MyTeams/libs/myteams"
 
 [ -f "/home/lukac/.ghcup/env" ] && source "/home/lukac/.ghcup/env" # ghcup-env
