@@ -25,7 +25,7 @@ return {
 							},
 						},
 						fg_color = colors.picton_blue,
-						other_win_hl_color = colors.eclipse,
+						other_win_hl_color = colors.bordeaux,
 					}
 				end,
 			},
@@ -35,6 +35,9 @@ return {
 		},
 		opts = {
 			close_if_last_window = false,
+			popup_border_style = "rounded",
+			enable_git_status = true,
+			enable_diagnostics = true,
 			window = {
 				mappings = {
 					["o"] = "open_with_window_picker",
@@ -58,6 +61,9 @@ return {
 			},
 
 			filesystem = {
+				hide_gitignored = true,
+				follow_current_file = true,
+				use_libuv_file_watcher = true,
 				always_show = {
 					".clang_format",
 					".clang-tidy",
@@ -181,7 +187,7 @@ return {
 		},
 	},
 
-	--[[ {
+	{
 		"iamcco/markdown-preview.nvim",
 		build = function()
 			vim.fn["mkdp#util#install"]()
@@ -195,8 +201,8 @@ return {
 			vim.g.mkdp_filetypes = { "markdown" }
 		end,
 		ft = { "markdown" },
-	}, ]]
-	{ "iamcco/markdown-preview.nvim" },
+	},
+	-- { "iamcco/markdown-preview.nvim" },
 	{ "ellisonleao/glow.nvim", config = true, cmd = "Glow" },
 
 	{

@@ -1,4 +1,4 @@
-local utils = require("utils")
+--[[ local utils = require("utils")
 
 return {
 	{
@@ -30,4 +30,6 @@ return {
 			})
 		end,
 	},
-}
+} ]]
+
+return {}

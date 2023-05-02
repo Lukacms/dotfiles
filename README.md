@@ -12,3 +12,8 @@ To add files to the repo, you can use this command, at the root of this reposito
 ```sh
 $> dotdrop import [path to file / folder] -c dotdrop/config.yaml
 ```
+
+The config installation can then be done with one command at the repository root:
+```sh
+dotdrop install -p lukac-laptop -D -c dotdrop/config.yaml
+```
