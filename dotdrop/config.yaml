@@ -93,24 +93,25 @@ dotfiles:
   d_neofetch:
     src: config/neofetch
     dst: ~/.config/neofetch
+  d_i3:
+    src: config/i3
+    dst: ~/.config/i3
+  d_sxhkd:
+    src: config/sxhkd
+    dst: ~/.config/sxhkd
+  d_wallpapers:
+    src: config/wallpapers
+    dst: ~/.config/wallpapers
+  f_autostart.sh:
+    src: config/autostart.sh
+    dst: ~/.config/autostart.sh
+    chmod: '755'
 profiles:
   home:
     dotfiles:
     - f_vimrc
     - f_xinitrc
     - d_polybar
-  lukac-laptop:
-    dotfiles:
-    - f_vimrc
-    - f_xinitrc
-    - d_nvim
-    - f_tmux.conf
-    - f_tmux-dark.conf
-    - f_tmux-light.conf
-    - d_alacritty
-    - d_kitty
-    - f_bashrc
-    - d_neofetch
   /home/lukac/dotfiles/dotdrop/config.yaml:
     dotfiles:
     - d_nvim
@@ -132,3 +133,17 @@ profiles:
     - d_dunst
     - d_eww
     - d_autostart
+  lukac:
+    dotfiles:
+    - f_bashrc
+    - d_nvim
+    - d_kitty
+    - d_i3
+    - d_sxhkd
+    - d_polybar
+    - d_rofi
+    - d_wallpapers
+    - d_autostart
+    - f_autostart.sh
+    - d_dunst
+    - f_gitconfig
