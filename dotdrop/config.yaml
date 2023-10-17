@@ -115,6 +115,9 @@ dotfiles:
   f_gitignore:
     src: gitignore
     dst: ~/.gitignore
+  d_betterdiscord:
+    src: config/BetterDiscord
+    dst: ~/.config/BetterDiscord
 profiles:
   home:
     dotfiles:
@@ -160,3 +163,4 @@ profiles:
     - f_pacman.conf
     - f_gitignore
     - f_xinitrc
+    - d_betterdiscord
