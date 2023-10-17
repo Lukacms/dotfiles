@@ -112,6 +112,9 @@ dotfiles:
   f_pacman.conf:
     src: etc/pacman.conf
     dst: /etc/pacman.conf
+  f_gitignore:
+    src: gitignore
+    dst: ~/.gitignore
 profiles:
   home:
     dotfiles:
@@ -155,3 +158,5 @@ profiles:
     - f_gitconfig
     - f_paru.conf
     - f_pacman.conf
+    - f_gitignore
+    - f_xinitrc

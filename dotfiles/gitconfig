@@ -1,3 +1,6 @@
 [user]
 	email = luka.camus@epitech.eu
 	name = Luka Camus
+[core]
+	excludesFile = /home/lukac/.gitignore
+	editor = nvim

@@ -1,0 +1,5 @@
+*.o
+node_modules
+feh*
+.cache/
+compile_commands.json
