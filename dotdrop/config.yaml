@@ -164,3 +164,6 @@ profiles:
     - f_gitignore
     - f_xinitrc
     - d_betterdiscord
+    - f_clang-format_c
+    - f_clang-format_cpp
+    - f_clang-tidy

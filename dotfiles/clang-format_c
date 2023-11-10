@@ -21,7 +21,7 @@ BreakBeforeBraces: Linux
 BreakBeforeTernaryOperators: 'false'
 ColumnLimit: '80'
 IndentWidth: '4'
-Language: ObjC
+Language: Cpp
 SpacesBeforeTrailingComments: '1'
 TabWidth: '4'
 UseTab: Never
