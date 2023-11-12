@@ -118,6 +118,9 @@ dotfiles:
   d_betterdiscord:
     src: config/BetterDiscord
     dst: ~/.config/BetterDiscord
+  f_vconsole.conf:
+    src: etc/vconsole.conf
+    dst: /etc/vconsole.conf
 profiles:
   home:
     dotfiles:
@@ -167,3 +170,4 @@ profiles:
     - f_clang-format_c
     - f_clang-format_cpp
     - f_clang-tidy
+    - f_vconsole.conf
