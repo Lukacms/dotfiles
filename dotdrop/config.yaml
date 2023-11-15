@@ -115,9 +115,6 @@ dotfiles:
   f_gitignore:
     src: gitignore
     dst: ~/.gitignore
-  d_betterdiscord:
-    src: config/BetterDiscord
-    dst: ~/.config/BetterDiscord
   f_vconsole.conf:
     src: etc/vconsole.conf
     dst: /etc/vconsole.conf
@@ -166,7 +163,6 @@ profiles:
     - f_pacman.conf
     - f_gitignore
     - f_xinitrc
-    - d_betterdiscord
     - f_clang-format_c
     - f_clang-format_cpp
     - f_clang-tidy
