@@ -1,8 +1,8 @@
 {
-    "header": {
-        "prefix": "header",
-        "body": [
-            ""
-        ]
-    }
+  "header": {
+    "prefix": "header",
+    "body": [
+      ""
+    ]
+  }
 }

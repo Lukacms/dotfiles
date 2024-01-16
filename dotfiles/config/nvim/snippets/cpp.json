@@ -65,6 +65,25 @@
         ],
         "description": "Code snippet for class"
     },
+    "struct": {
+        "prefix": "struct",
+        "body": [
+            "struct ${1:StructName} {",
+            "  public:",
+            "    /* variables */",
+            "",
+            "    /* constructors / destructors */",
+            "    $1() = default;",
+            "    $1($1 const& to_copy) = default;",
+            "    $1($1&& to_move) = default;",
+            "    ~$1() = default;",
+            "    $1& operator=($1 const& to_copy) = default;",
+            "    $1& operator=($1 && to_move) = default;",
+            "};",
+            ""
+        ],
+        "description": "Code snippet for struct"
+    },
     "ifndef": {
         "prefix": "ifndef",
         "body": [
