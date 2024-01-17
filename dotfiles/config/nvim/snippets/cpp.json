@@ -1,52 +1,4 @@
 {
-    "header": {
-        "prefix": "header_cpp",
-        "body": [
-            "/*",
-            "** EPITECH PROJECT, 2023",
-            "** $TM_DIRECTORY",
-            "** File description:",
-            "** $TM_FILENAME_BASE",
-            "*/",
-            "",
-            "$0"
-        ],
-        "description": "Code snippet for header"
-    },
-    "header_hpp": {
-        "prefix": "header_hpp",
-        "body": [
-            "/*",
-            "** EPITECH PROJECT, 2023",
-            "** $TM_DIRECTORY",
-            "** File description:",
-            "** $TM_FILENAME_BASE",
-            "*/",
-            "",
-            "#ifndef $3",
-            "#define $3",
-            "$0",
-            "#endif /* !$3 */",
-            ""
-        ],
-        "description": "Code snippet for header"
-    },
-    "header_hpp_": {
-        "prefix": "header_hpp_",
-        "body": [
-            "/*",
-            "** EPITECH PROJECT, 2023",
-            "** $TM_DIRECTORY",
-            "** File description:",
-            "** $TM_FILENAME_BASE",
-            "*/",
-            "",
-            "#pragma once",
-            "$0",
-            ""
-        ],
-        "description": "Code snippet for header"
-    },
     "class": {
         "prefix": "class",
         "body": [
@@ -55,34 +7,16 @@
             "    $1() = default;",
             "    $1($1 const& to_copy) = default;",
             "    $1($1&& to_move) = default;",
+            "",
             "    ~$1() = default;",
+            "",
             "    $1& operator=($1 const& to_copy) = default;",
-            "    $1& operator=($1 && to_move) = default;",
             "",
             "  private:",
             "};",
             ""
         ],
         "description": "Code snippet for class"
-    },
-    "struct": {
-        "prefix": "struct",
-        "body": [
-            "struct ${1:StructName} {",
-            "  public:",
-            "    /* variables */",
-            "",
-            "    /* constructors / destructors */",
-            "    $1() = default;",
-            "    $1($1 const& to_copy) = default;",
-            "    $1($1&& to_move) = default;",
-            "    ~$1() = default;",
-            "    $1& operator=($1 const& to_copy) = default;",
-            "    $1& operator=($1 && to_move) = default;",
-            "};",
-            ""
-        ],
-        "description": "Code snippet for struct"
     },
     "ifndef": {
         "prefix": "ifndef",
@@ -100,7 +34,7 @@
     "main_": {
         "prefix": "main_",
         "body": [
-            "int main(int argc, const char* argv[]) {",
+            "int main(int argc, const char** argv) {",
             "    return 0;",
             "}"
         ]

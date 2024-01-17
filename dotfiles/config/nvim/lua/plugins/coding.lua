@@ -22,155 +22,109 @@ return {
         opts = {}
     },
 
-    --[[ {
-		"L3MON4D3/LuaSnip",
-		version = "<CurrentMajor>.*",
-		config = function()
-			require("luasnip.loaders.from_vscode").lazy_load({ paths = { "~/.config/nvim/snippets/" } })
-		end,
-		keys = {
-			{
-				"<C-l>",
-				function()
-					require("luasnip").jump(1)
-				end,
-				mode = "i",
-			},
-			{
-				"<C-h>",
-				function()
-					require("luasnip").jump(-1)
-				end,
-				mode = "i",
-			},
-		},
-	}, ]]
-
     {
-        "hrsh7th/vim-vsnip",
+        'L3MON4D3/LuaSnip',
+        version = '1.*',
         config = function()
-            vim.g.vsnip_snippet_dir = "~/.config/nvim/snippets"
-
-            local map = require("utils").map
-            local options = { expr = true, noremap = true }
-
-            map("i", "<C-l>", 'vsnip#jumpable(1)  ? "<Plug>(vsnip-jump-next)" : "<C-l>"', options)
-            map("s", "<C-l>", 'vsnip#jumpable(1)  ? "<Plug>(vsnip-jump-next)" : "<C-l>"', options)
-            map("s", "<C-k>", 'vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)" : "<C-h>"', options)
-            map("i", "<C-k>", 'vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)" : "<C-h>"', options)
+            require('luasnip.loaders.from_vscode').lazy_load({
+                paths = { '~/.config/nvim/snippets' },
+            })
         end,
+        keys = {
+            {
+                '<C-l>',
+                function()
+                    require('luasnip').jump(1)
+                end,
+                mode = 'i',
+            },
+            {
+                '<C-h>',
+                function()
+                    require('luasnip').jump(-1)
+                end,
+                mode = 'i',
+            },
+        },
     },
 
     -- Autocompletion
     {
-        "hrsh7th/nvim-cmp",
-        event = "InsertEnter",
+        'hrsh7th/nvim-cmp',
+        event = 'InsertEnter',
         dependencies = {
-            "hrsh7th/cmp-path",
-            "hrsh7th/cmp-vsnip",
-            -- "L3MON4D3/LuaSnip",
-            "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-nvim-lsp",
-            -- "onsails/lspkind-nvim",
+            'hrsh7th/cmp-path',
+            'saadparwaiz1/cmp_luasnip',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-nvim-lsp',
         },
         init = function(_)
-            local highlight = require("utils").highlight
-            local colors = require("highlights").colors
-            local cmp = require("cmp")
-            -- local lspkind = require("lspkind")
+            local highlight = require('utils').highlight
+            local colors = require('vscode.colors').get_colors()
 
-            highlight("CmpItemAbbrDeprecated", { style = "strikethrough", fg = colors.grey })
+            highlight('CmpItemAbbrDeprecated', { style = 'strikethrough', fg = colors.vscGray })
 
-            highlight("CmpItemAbbrMatch", { bg = "NONE", fg = colors.picton_blue })
-            highlight("CmpItemAbbrMatchFuzzy", { bg = "NONE", fg = colors.picton_blue })
+            highlight('CmpItemAbbrMatch', { bg = 'NONE', fg = colors.vscBlue })
+            highlight('CmpItemAbbrMatchFuzzy', { bg = 'NONE', fg = colors.vscBlue })
 
-            highlight("CmpItemKindVariable", { bg = "NONE", fg = colors.columbia_blue })
-            highlight("CmpItemKindInterface", { bg = "NONE", fg = colors.columbia_blue })
-            highlight("CmpItemKindText", { bg = "NONE", fg = colors.columbia_blue })
+            highlight('CmpItemKindVariable', { bg = 'NONE', fg = colors.vscLightBlue })
+            highlight('CmpItemKindInterface', { bg = 'NONE', fg = colors.vscLightBlue })
+            highlight('CmpItemKindText', { bg = 'NONE', fg = colors.vscLightBlue })
 
-            highlight("CmpItemKindFunction", { bg = "NONE", fg = colors.lilac })
-            highlight("CmpItemKindMethod", { bg = "NONE", fg = colors.lilac })
+            highlight('CmpItemKindFunction', { bg = 'NONE', fg = colors.vscPink })
+            highlight('CmpItemKindMethod', { bg = 'NONE', fg = colors.vscPink })
 
-            highlight("CmpItemKindKeyword", { bg = "NONE", fg = colors.light_grey })
-            highlight("CmpItemKindProperty", { bg = "NONE", fg = colors.light_grey })
-            highlight("CmpItemKindUnit", { bg = "NONE", fg = colors.light_grey })
-
-            vim.opt.completeopt = { "menuone", "noselect" }
-            -- Remove cmp status display
-            vim.opt.shortmess:append("c")
+            highlight('CmpItemKindKeyword', { bg = 'NONE', fg = colors.vscFront })
+            highlight('CmpItemKindProperty', { bg = 'NONE', fg = colors.vscFront })
+            highlight('CmpItemKindUnit', { bg = 'NONE', fg = colors.vscFront })
         end,
         opts = function()
-            local cmp = require("cmp")
-            -- local lspkind = require("lspkind")
-            -- local luasnip = require("luasnip")
+            local cmp = require('cmp')
+            local luasnip = require('luasnip')
 
             return {
                 snippet = {
                     expand = function(args)
-                        -- luasnip.lsp_expand(args.body)
-                        vim.fn["vsnip#anonymous"](args.body)
+                        luasnip.lsp_expand(args.body)
                     end,
                 },
-
                 mapping = {
-                    ["<C-Space>"] = cmp.mapping.complete({
+                    ['<C-Space>'] = cmp.mapping.complete({
                         config = {
                             sources = {
-                                { name = "nvim_lsp" },
-                                -- { name = "LuaSnip" },
-                                { name = "vsnip" },
-                                { name = "path" },
-                                { name = "buffer" },
+                                { name = 'nvim_lsp' },
+                                { name = 'luasnip' },
+                                { name = 'path' },
+                                { name = 'buffer' },
                             },
                         },
                     }),
-                    ["<C-e>"] = cmp.mapping.close(),
-                    ["<CR>"] = cmp.mapping.confirm({ select = true }),
-                    ["<Tab>"] = cmp.mapping.select_next_item(),
-                    ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+                    ['<C-e>'] = cmp.mapping.close(),
+                    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+                    ['<Tab>'] = cmp.mapping.select_next_item(),
+                    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
                 },
-
                 sources = {
-                    { name = "nvim_lsp" },
-                    -- { name = "LuaSnip" },
-                    { name = "vsnip" },
-                    { name = "path" },
-                    { name = "buffer" },
+                    { name = 'nvim_lsp' },
+                    { name = 'luasnip' },
+                    { name = 'path' },
+                    { name = 'buffer' },
                 },
-
+                window = {
+                    completion = {
+                        col_offset = -3,
+                        side_padding = 0,
+                    },
+                },
                 formatting = {
-                    --[[ format = lspkind.cmp_format({
-                        mode = "symbol",
-                        maxwidth = "50",
-
-                        symbol_map = {
-                            Text = "",
-                            Method = "",
-                            Function = "",
-                            Constructor = "",
-                            Field = "ﴲ",
-                            Variable = "[]",
-                            Class = "",
-                            Interface = "ﰮ",
-                            Module = "",
-                            Property = "襁",
-                            Unit = "",
-                            Value = "",
-                            Enum = "練",
-                            Keyword = "",
-                            Snippet = "",
-                            Color = "",
-                            File = "",
-                            Reference = "",
-                            Folder = "",
-                            EnumMember = "",
-                            Constant = "ﲀ",
-                            Struct = "ﳤ",
-                            Event = "",
-                            Operator = "",
-                            TypeParameter = "",
-                        },
-                    }), ]]
+                    fields = { 'kind', 'abbr', 'menu' },
+                    format = function(_, item)
+                        local icons = require('config.init').icons.kinds
+                        if icons[item.kind] then
+                            item.kind = ' ' .. icons[item.kind] .. ' '
+                        end
+                        return item
+                    end,
                 },
             }
         end,
@@ -212,17 +166,17 @@ return {
     },
 
     -- just treesitter
-    --[[ {
+    {
         "IndianBoy42/tree-sitter-just",
         config = function(plugin, opts)
             require('tree-sitter-just').setup({})
         end,
-    }, ]]
-    --[[ {
+    },
+    {
         "NoahTheDuke/vim-just",
         event = { "BufReadPre", "BufNewFile" },
         ft = { "\\cjustfile", "*.just", ".justfile" },
-    } ]]
+    }
     --[[ {
         "ray-x/go.nvim",
         dependencies = { -- optional packages

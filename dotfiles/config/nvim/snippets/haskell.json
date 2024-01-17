@@ -1,16 +1,16 @@
 {
-  "header": {
-    "prefix": "header_haskell",
-    "body": [
-      "{-",
-      "-- EPITECH PROJECT, 2023",
-      "-- $TM_DIRECTORY",
-      "-- File description:",
-      "-- $TM_FILENAME_BASE",
-      "-}",
-      "",
-      "$0"
-    ],
-    "description": "Code snippet for haskell header"
-  }
+    "header": {
+        "prefix": "header_haskell",
+        "body": [
+            "{-",
+            "-- EPITECH PROJECT, 2024",
+            "-- ${1:ProjectName}",
+            "-- File description:",
+            "-- ${2:FileDescription}",
+            "-}",
+            "",
+            "$0"
+        ],
+        "description": "Code snippet for haskell header"
+    }
 }
