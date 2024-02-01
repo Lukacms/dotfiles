@@ -1,0 +1,31 @@
+#!/usr/bin/bash
+
+usage_and_exit()
+{
+	(
+	echo "Execute a command with a name."
+	echo ""
+	echo "Usage: $(basename "$0") [OPTION]... NAME ARGS..."
+	echo "
+	-h, --help|print this help
+	-d, --delimiter|specifiy name-command delimiter (defaults to '--')
+	" | column -t -s '|'
+	) >&2
+	exit "${1:-1}"
+}
+
+[ $# -gt 0 ] || usage_and_exit
+
+delim="--"
+command=""
+
+while [ $# -gt 0 ]; do
+	case "$1" in
+		-h|--help) usage_and_exit 0 ;;
+		-d|--delimiter) delim=$2; shift 2 ;;
+		"$delim") command="${*:2}"; break ;;
+		*) shift ;;
+	esac
+done
+
+$command

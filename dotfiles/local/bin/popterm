@@ -1,0 +1,3 @@
+#!/bin/sh
+
+kitty --class "floating-term" "$@" >/dev/null 2>&1 &

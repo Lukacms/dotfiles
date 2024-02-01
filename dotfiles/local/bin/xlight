@@ -1,0 +1,142 @@
+#!/usr/bin/env bash
+
+##
+# Print a message on the error output
+#
+# \param error message
+##
+function print_error()
+{
+    >&2 echo xlight: $@
+}
+
+##
+# List active monitors name
+##
+function list_monitors()
+{
+    xrandr --listactivemonitors | sed -n '1!p' | awk '{print $4}'
+}
+
+##
+# List active monitors brightness
+##
+function list_brightness()
+{
+    xrandr --verbose | grep Brightness | grep -o '[0-9].*'
+}
+
+monitors=( $(list_monitors) )
+brightnesses=( $(list_brightness) )
+
+##
+# Returns the brightness
+#
+# \param (optional) monitor
+# 
+# if monitor parameter is not provided, returns 
+# the average brightness value
+##
+function get_brightness()
+{
+    if [ -z "$1" ]; then
+        sum=$(IFS=+; echo "${brightnesses[*]}" | bc)
+        average=$( echo "scale=2; $sum/${#monitors[@]}" | bc)
+        echo $average
+    else
+        for i in "${!monitors[@]}"; do
+            if [[ "${monitors[$i]}" = "$1" ]]; then
+                echo "${brightnesses[$i]}"
+                return
+            fi
+        done
+        print_error "invalid monitor '$1'"
+        exit 1
+    fi
+}
+
+##
+# Sets the brightness
+#
+# \param brightness value
+# \param (optional) monitor
+#
+# if monitor is not provided, brightness value is 
+# applied to all active monitors
+##
+function set_brightness()
+{
+    if (( $(echo "$1 <= 0.0" | bc) || $(echo "$1 > 1.0" | bc) )); then
+        print_error "Out of bounds (0.0 -> 1.0)"
+        exit 1
+    fi
+    if [ ! -z "$2" ]; then
+        xrandr --output $2 --brightness $1
+    else
+				# dunstify -a "changeBrightness" -u low -h string:x-dunst-stack-tag:brightness -h int:value:"$(( $1 * 100 ))" "Brightness: $1"
+        for i in "${!monitors[@]}"; do
+            set_brightness $1 ${monitors[$i]}
+        done
+    fi
+}
+
+##
+# Add a value to the current brightness
+#
+# \param brightness value
+# \param (optional) monitor
+#
+# if monitor is not provided, brightness value is
+# added to all active monitors
+##
+function add_brightness()
+{
+    if [ ! -z "$2" ]; then
+        set_brightness $( echo "$( get_brightness $2 )+$1" | bc ) $monitor
+    else
+        for i in "${!monitors[@]}"; do
+            add_brightness $1 ${monitors[$i]}
+        done
+    fi
+}
+
+##
+# Substract a value to the current brightness
+#
+# \param brightness value
+# \param (optional) monitor
+#
+# if monitor is not provided, brightness value is
+# substracted from all active monitors
+##
+function sub_brightness()
+{
+    if [ ! -z "$2" ]; then
+        set_brightness $( echo "$( get_brightness $2 )-$1" | bc ) $monitor
+    else
+        for i in "${!monitors[@]}"; do
+            sub_brightness $1 ${monitors[$i]}
+        done
+    fi
+}
+
+case $1 in
+    list)
+        list_brightness
+        ;;
+    sub)
+        shift
+        sub_brightness $@
+        ;;
+    add)
+        shift
+        add_brightness $@
+        ;;
+    set)
+        shift
+        set_brightness $@
+        ;;
+    *)
+        get_brightness $@
+        ;;
+esac

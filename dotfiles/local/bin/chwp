@@ -1,0 +1,14 @@
+#!/bin/sh
+
+wps_dir="$HOME/.config/wallpapers"
+
+[[ -z "$1" ]] && wp=$(ls $wps_dir -1 | rofi -dmenu) || wp=$1
+
+[ -z "$wp" ] && >&2 echo "Wallpaper not found" && exit 1
+
+ln -fs $wps_dir/$wp $HOME/.wall
+feh --bg-fill $HOME/.wall
+betterlockscreen -u $HOME/.wall
+
+#[ $(id -u) -ne 0 ] && >&2 echo "Please run as root" && exit 1
+#cp $HOME/.cache/i3lock/current/dimblur.png /usr/share/sddm/themes/firark/Assets/background.png

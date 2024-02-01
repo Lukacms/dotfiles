@@ -1,0 +1,22 @@
+#!/usr/bin/sh
+
+# run by cron task: */5 * * * * sh ~/.local/bin/batterywarn
+
+function notify_send() {
+  local display=":$(ls /tmp/.X11-unix/* | sed 's#/tmp/.X11-unix/X##' | head -n 1)"
+  local user=$(who | grep '('$display')' | awk '{print $1}' | head -n 1)
+  local uid=$(id -u $user)
+  sudo -u $user DISPLAY=$display DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$uid/bus notify-send "$@"
+}
+
+LOCKFOLDER=$HOME/.cache/batterywarn
+LOCKFILE=$LOCKFOLDER/lock
+BATTINFO=`acpi -b`
+THRESHOLD="15"
+if [[ `echo $BATTINFO | grep Discharging` && `echo $BATTINFO | cut -f 4 -d " " | cut -f 1 -d "%"` -le "$THRESHOLD" ]]; then
+  [ -e $LOCKFILE ] && exit 0
+  mkdir -p $LOCKFOLDER && touch $LOCKFILE
+  notify_send -u critical "Low battery" "$BATTINFO"
+else
+  rm -f $LOCKFILE
+fi

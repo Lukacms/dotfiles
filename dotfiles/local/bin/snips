@@ -1,0 +1,8 @@
+#!/bin/sh
+
+SNIPPETS_DIRECTORY=${SNIPPETS_DIRECTORY:-$HOME/.snippets}
+
+find "${SNIPPETS_DIRECTORY}" -type f -printf "%f\n" \
+	| fzf --preview="bat --color=always '${SNIPPETS_DIRECTORY}/{}'" \
+	| xargs -I {} cat "$SNIPPETS_DIRECTORY/{}" \
+	| nohup xclip -loops 0 -sel c >/dev/null 2>&1

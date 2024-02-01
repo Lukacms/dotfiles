@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+lock_() { betterlockscreen -l dimblur; }
+logout_() { i3-msg exit; }
+shutdown_() { shutdown now; }
+reboot_() { reboot; }
+suspend_() { lock_ & disown; sleep 0.3; systemctl suspend; }
+
+help_() {
+  echo "Usage: `echo $0 | rev | cut -d'/' -f1 | rev` lock|logout|shutdown|reboot|suspend";
+  exit 1;
+}
+
+case "$1" in
+  lock) lock_ ;;
+  logout) logout_ ;;
+  shutdown) shutdown_ ;;
+  reboot) reboot_ ;;
+  suspend) suspend_ ;;
+  *) help_ ;;
+esac

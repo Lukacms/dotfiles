@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# xidlehook \
+#   --not-when-audio \
+#   --not-when-fullscreen \
+#   --timer 0 '' '' \
+#   --timer 300 'powercontrol lock' '' \
+#   --timer 600 'powercontrol suspend' ''
+
+exec xautolock \
+	-detectsleep \
+	-time 10 \
+  -corners +00- \
+	-locker "powercontrol lock"
