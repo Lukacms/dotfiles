@@ -106,21 +106,15 @@ dotfiles:
     src: config/autostart.sh
     dst: ~/.config/autostart.sh
     chmod: '755'
-  f_paru.conf:
-    src: etc/paru.conf
-    dst: /etc/paru.conf
-  f_pacman.conf:
-    src: etc/pacman.conf
-    dst: /etc/pacman.conf
   f_gitignore:
     src: gitignore
     dst: ~/.gitignore
-  f_vconsole.conf:
-    src: etc/vconsole.conf
-    dst: /etc/vconsole.conf
   d_bin:
     src: local/bin
     dst: ~/.local/bin
+  d_picom:
+    src: config/picom
+    dst: ~/.config/picom
 profiles:
   home:
     dotfiles:
@@ -171,3 +165,4 @@ profiles:
     - f_clang-tidy
     - f_vconsole.conf
     - d_bin
+    - d_picom
