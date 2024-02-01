@@ -24,8 +24,8 @@ return {
 				vscLightRed = "#D16969",
 				vscYellowOrange = "#D7BA7D",
 				vscYellow = "#DCDCAA",
-				vscDarkYellow = "#FFA602",
-				vscPink = "#C586C0",
+				vscDarkYellow = "#D9AA02",
+				vscPink = "#C586B3",
 			},
 			group_overrides = {
 				-- this supports the same val table as vim.api.nvim_set_hl

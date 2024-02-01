@@ -119,7 +119,7 @@ return {
                 formatting = {
                     fields = { 'kind', 'abbr', 'menu' },
                     format = function(_, item)
-                        local icons = require('config.init').icons.kinds
+                        local icons = require('config').icons.kinds
                         if icons[item.kind] then
                             item.kind = ' ' .. icons[item.kind] .. ' '
                         end
