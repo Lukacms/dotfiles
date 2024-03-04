@@ -15,7 +15,7 @@ opt.wrap = false          -- Display long lines as just one line
 opt.foldlevel = 99
 opt.foldlevelstart = 99 -- Minimum number of screen line below and above the cursor
 opt.foldenable = true
-opt.colorcolumn = "79"
+-- opt.colorcolumn = "79"
 
 opt.termguicolors = true      -- Set colorscheme
 
@@ -56,3 +56,11 @@ vim.o.laststatus = 0
 vim.o.mouse = ""
 
 -- vim.o.equalalways = false -- splitted windows are not always the same size
+
+-- Backupopt.backup = true
+
+opt.undofile = true
+opt.swapfile = false
+opt.undodir = vim.fn.expand('~/.nvim/tmp/undo/')
+opt.backupdir = vim.fn.expand('~/.nvim/tmp/backup/')
+opt.directory = vim.fn.expand('~/.nvim/tmp/swap/')

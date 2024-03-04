@@ -1,0 +1,26 @@
+{
+    "import": {
+        "prefix": "import",
+        "body": [
+            "import ($1)"
+        ]
+    },
+    "fn": {
+        "prefix": "func",
+        "body": [
+            "func $1($2) $3 {",
+            "$4",
+            "}",
+            ""
+        ]
+    },
+    "method": {
+        "prefix": "method",
+        "body": [
+            "func (*$1) $2($3) $4 {",
+            "$5",
+            "}",
+            ""
+        ]
+    }
+}

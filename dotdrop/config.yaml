@@ -115,6 +115,9 @@ dotfiles:
   d_picom:
     src: config/picom
     dst: ~/.config/picom
+  f_editorconfig:
+    src: editorconfig
+    dst: ~/.editorconfig
 profiles:
   home:
     dotfiles:
@@ -163,3 +166,4 @@ profiles:
     - f_clang-tidy
     - d_bin
     - d_picom
+    - f_editorconfig

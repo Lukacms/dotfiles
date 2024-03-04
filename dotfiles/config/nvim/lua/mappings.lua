@@ -34,3 +34,8 @@ map("n", "<Space>", "za")
 
 --[[ map('n', 'n', ':cnext<CR>')
 map('n', 'N', ':cprev<CR>') ]]
+
+-- Neotest
+map('n', '<c-t><c-t>', ':lua require("neotest").summary.toggle()<CR>')
+map('n', '<c-t>r', ':lua require("neotest").run.run()<CR>')
+map('n', '<c-t>R', ':lua require("neotest").run.run(vim.fn.expand("%"))<CR>')
