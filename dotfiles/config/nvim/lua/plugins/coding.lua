@@ -19,68 +19,68 @@ return {
         "j-hui/fidget.nvim",
         tag = "legacy",
         event = "BufReadPre",
-        opts = {}
+        opts = {},
     },
 
     {
-        'L3MON4D3/LuaSnip',
-        version = '1.*',
+        "L3MON4D3/LuaSnip",
+        version = "1.*",
         config = function()
-            require('luasnip.loaders.from_vscode').lazy_load({
-                paths = { '~/.config/nvim/snippets' },
+            require("luasnip.loaders.from_vscode").lazy_load({
+                paths = { "~/.config/nvim/snippets" },
             })
         end,
         keys = {
             {
-                '<C-l>',
+                "<C-l>",
                 function()
-                    require('luasnip').jump(1)
+                    require("luasnip").jump(1)
                 end,
-                mode = 'i',
+                mode = "i",
             },
             {
-                '<C-h>',
+                "<C-h>",
                 function()
-                    require('luasnip').jump(-1)
+                    require("luasnip").jump(-1)
                 end,
-                mode = 'i',
+                mode = "i",
             },
         },
     },
 
     -- Autocompletion
     {
-        'hrsh7th/nvim-cmp',
-        event = 'InsertEnter',
+        "hrsh7th/nvim-cmp",
+        event = "InsertEnter",
         dependencies = {
-            'hrsh7th/cmp-path',
-            'saadparwaiz1/cmp_luasnip',
-            'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-nvim-lsp',
+            "hrsh7th/cmp-path",
+            "saadparwaiz1/cmp_luasnip",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-nvim-lsp",
         },
         init = function(_)
-            local highlight = require('utils').highlight
-            local colors = require('vscode.colors').get_colors()
+            local highlight = require("utils").highlight
+            local colors = require("vscode.colors").get_colors()
 
-            highlight('CmpItemAbbrDeprecated', { style = 'strikethrough', fg = colors.vscGray })
+            highlight("CmpItemAbbrDeprecated", { style = "strikethrough", fg = colors.vscGray })
 
-            highlight('CmpItemAbbrMatch', { bg = 'NONE', fg = colors.vscBlue })
-            highlight('CmpItemAbbrMatchFuzzy', { bg = 'NONE', fg = colors.vscBlue })
+            highlight("CmpItemAbbrMatch", { bg = "NONE", fg = colors.vscBlue })
+            highlight("CmpItemAbbrMatchFuzzy", { bg = "NONE", fg = colors.vscBlue })
 
-            highlight('CmpItemKindVariable', { bg = 'NONE', fg = colors.vscLightBlue })
-            highlight('CmpItemKindInterface', { bg = 'NONE', fg = colors.vscLightBlue })
-            highlight('CmpItemKindText', { bg = 'NONE', fg = colors.vscLightBlue })
+            highlight("CmpItemKindVariable", { bg = "NONE", fg = colors.vscLightBlue })
+            highlight("CmpItemKindInterface", { bg = "NONE", fg = colors.vscLightBlue })
+            highlight("CmpItemKindText", { bg = "NONE", fg = colors.vscLightBlue })
 
-            highlight('CmpItemKindFunction', { bg = 'NONE', fg = colors.vscPink })
-            highlight('CmpItemKindMethod', { bg = 'NONE', fg = colors.vscPink })
+            highlight("CmpItemKindFunction", { bg = "NONE", fg = colors.vscPink })
+            highlight("CmpItemKindMethod", { bg = "NONE", fg = colors.vscPink })
 
-            highlight('CmpItemKindKeyword', { bg = 'NONE', fg = colors.vscFront })
-            highlight('CmpItemKindProperty', { bg = 'NONE', fg = colors.vscFront })
-            highlight('CmpItemKindUnit', { bg = 'NONE', fg = colors.vscFront })
+            highlight("CmpItemKindKeyword", { bg = "NONE", fg = colors.vscFront })
+            highlight("CmpItemKindProperty", { bg = "NONE", fg = colors.vscFront })
+            highlight("CmpItemKindUnit", { bg = "NONE", fg = colors.vscFront })
         end,
         opts = function()
-            local cmp = require('cmp')
-            local luasnip = require('luasnip')
+            local cmp = require("cmp")
+            local luasnip = require("luasnip")
 
             return {
                 snippet = {
@@ -89,26 +89,26 @@ return {
                     end,
                 },
                 mapping = {
-                    ['<C-Space>'] = cmp.mapping.complete({
+                    ["<C-Space>"] = cmp.mapping.complete({
                         config = {
                             sources = {
-                                { name = 'nvim_lsp' },
-                                { name = 'luasnip' },
-                                { name = 'path' },
-                                { name = 'buffer' },
+                                { name = "nvim_lsp" },
+                                { name = "luasnip" },
+                                { name = "path" },
+                                { name = "buffer" },
                             },
                         },
                     }),
-                    ['<C-e>'] = cmp.mapping.close(),
-                    ['<CR>'] = cmp.mapping.confirm({ select = true }),
-                    ['<Tab>'] = cmp.mapping.select_next_item(),
-                    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+                    ["<C-e>"] = cmp.mapping.close(),
+                    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                    ["<Tab>"] = cmp.mapping.select_next_item(),
+                    ["<S-Tab>"] = cmp.mapping.select_prev_item(),
                 },
                 sources = {
-                    { name = 'nvim_lsp' },
-                    { name = 'luasnip' },
-                    { name = 'path' },
-                    { name = 'buffer' },
+                    { name = "nvim_lsp" },
+                    { name = "luasnip" },
+                    { name = "path" },
+                    { name = "buffer" },
                 },
                 window = {
                     completion = {
@@ -117,11 +117,11 @@ return {
                     },
                 },
                 formatting = {
-                    fields = { 'kind', 'abbr', 'menu' },
+                    fields = { "kind", "abbr", "menu" },
                     format = function(_, item)
-                        local icons = require('config').icons.kinds
+                        local icons = require("config").icons.kinds
                         if icons[item.kind] then
-                            item.kind = ' ' .. icons[item.kind] .. ' '
+                            item.kind = " " .. icons[item.kind] .. " "
                         end
                         return item
                     end,
@@ -134,7 +134,7 @@ return {
     {
         "simrat39/symbols-outline.nvim",
         keys = { { "<Leader>s", "<cmd>SymbolsOutlineOpen<CR>" } },
-        opts = {}
+        opts = {},
     },
     { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
 
@@ -157,19 +157,19 @@ return {
             print_width = 100,
             jsx_single_quote = true,
             bracket_same_line = true,
-        }
+        },
     },
 
     -- gdb debugger
     {
-        "sakhnik/nvim-gdb"
+        "sakhnik/nvim-gdb",
     },
 
     -- just treesitter
     {
         "IndianBoy42/tree-sitter-just",
         config = function(plugin, opts)
-            require('tree-sitter-just').setup({})
+            require("tree-sitter-just").setup({})
         end,
     },
     {
@@ -177,5 +177,4 @@ return {
         event = { "BufReadPre", "BufNewFile" },
         ft = { "\\cjustfile", "*.just", ".justfile" },
     },
-
 }

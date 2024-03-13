@@ -38,6 +38,7 @@ return {
             popup_border_style = "rounded",
             enable_git_status = true,
             enable_diagnostics = true,
+            sort_case_insensitive = true, -- used when sorting files and directories in the tree
             window = {
                 mappings = {
                     ["o"] = "open_with_window_picker",
@@ -54,7 +55,7 @@ return {
                 git_status = {
                     symbols = {
                         deleted = "",
-
+                        renamed = "󰁕",
                         untracked = "*",
                     },
                 },
@@ -71,8 +72,6 @@ return {
             },
         },
     },
-
-    -- {%@@ if profile != "lukac" @@%}
 
     {
         "nvim-telescope/telescope.nvim",
