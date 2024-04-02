@@ -81,4 +81,7 @@ on() {
   # Hotkey daemon
   on "startup reload" -R sxhkd -c ~/.config/sxhkd/sxhkdrc
 
+  # clipboard history
+  on "startup reload" copyq
+
 # }}}

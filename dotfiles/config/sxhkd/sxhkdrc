@@ -24,9 +24,13 @@ super + a
 super + w
   firefox
 
+# launch browser with private window
+super + shift + w
+  firefox --private-window
+
 # launch file explorer
 super + e
-  dolphin
+  ranger
 
 # launch process viewer
 ctrl + alt + Delete
@@ -60,13 +64,17 @@ super + shift + s
 {_,shift + ,alt + }{ctrl + ,_} @Print
   scrot {-e,-fs -e,-ue} {'mkdir -p ~/screenshots && mv $f ~/screenshots','xclip -sel clip -target image/png -i $f && rm $f'}
 
+# mute microphone
+XF86AudioMicMute
+  pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
 # mute sound
 XF86AudioMute
-  amixer set Master toggle
+  pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # raise/lower volume
 XF86Audio{Raise,Lower}Volume
-  amixer set Master {5%+,5%-} unmute
+  pactl set-sink-volume @DEFAULT_SINK@ {+5%,-5%}
 
 # mute microphone
 # XF86AudioMicMute
