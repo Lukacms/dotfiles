@@ -90,9 +90,6 @@ dotfiles:
   d_alacritty:
     src: config/alacritty
     dst: ~/.config/alacritty
-  d_neofetch:
-    src: config/neofetch
-    dst: ~/.config/neofetch
   d_i3:
     src: config/i3
     dst: ~/.config/i3
@@ -118,6 +115,9 @@ dotfiles:
   f_editorconfig:
     src: editorconfig
     dst: ~/.editorconfig
+  d_fastfetch:
+    src: config/fastfetch
+    dst: ~/.config/fastfetch
 profiles:
   home:
     dotfiles:
@@ -167,3 +167,4 @@ profiles:
     - d_bin
     - d_picom
     - f_editorconfig
+    - d_fastfetch
