@@ -24,21 +24,26 @@ colors() {
 			fgc=${fgc#37} # white
 			bgc=${bgc#40} # black
 
-			vals="${fgc:+$fgc;}${bgc}"
+			vals=${fgc:+$fgc;}${bgc}
 			vals=${vals%%;}
 
-			seq0="${vals:+\e[${vals}m}"
+			seq0=${vals:+\e[${vals}m}
 			printf "  %-9s" "${seq0:-(default)}"
 			printf " ${seq0}TEXT\e[m"
-			printf " \e[${vals:+${vals+$vals;}}1mBOLD\e[m"
+            printf ' \e[${vals:+${vals+$vals;}}1mBOLD\e[m'
 		done
 		echo; echo
 	done
 }
 
+tmp() {
+    $EDITOR `mktemp -u --suffix=.${1:-md}`
+}
 neofetch
+
 set -o vi # --> maybe, if I wanna have bash with vim shortcuts
-source ~/.profile
+
+[ -f ~/.profile ] && . ~/.profile
 
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
@@ -101,7 +106,6 @@ if ${use_color} ; then
 		branch=$(git branch 2> /dev/null | grep '^*' | colrm 1 2)
 	    PS1+=" [${EXIT}] ${BYel}\W ${BBlu}(${branch}) ${RCol}$ "
 	}
-  alias ashley='for i in {0..53}; do cat /dev/urandom | tr -dc '\''[:alpha:]'\'' | dd bs=1 count=236 status=none; done | lolcat --speed=10'
   alias ls='lsd'
   alias grep='grep --colour=auto'
   alias egrep='egrep --colour=auto'
@@ -109,19 +113,27 @@ if ${use_color} ; then
   alias ll='ls -lh'
   alias l='ll -A'
   alias la='ll -a'
-  alias mr_clean="find -name *~ -delete -o -name '#*#' -delete"
   alias gst='git status'
   alias gaa='git add --all'
   alias gc='git commit'
   alias goi="rlwrap yaegi"
-  alias gp='git push'
-  alias cl='clear'
-  alias mouse='sudo modprobe -r i2c_hid_acpi && sudo modprobe i2c_hid_acpi'
+  alias dc='git rev-parse --is-inside-work-tree >/dev/null && docker compose --file $(git rev-parse --show-toplevel)/dc-dev.yml'
+  alias gp='read -p "pushing on $(git branch --show-current) (<C-c> to cancel, <CR> to continue): " && git push'
+  alias gd="git diff"
+  alias gm="git merge"
+  alias gds="git diff --staged"
+  alias gc="git checkout"
+  alias gco='git commit'
+  alias gcl="git checkout-last-branch"
+  alias glf="git last-branches-fzf"
+  alias pull='git pull'
+  # alias cl="clear && printf '\e[3J'"
+  alias cl="clear"
   alias speed='xset r rate 200 50'
   alias again='exec bash'
   alias commit-count='git log --oneline | wc -l '
   alias commit-count-user='git shortlog -s'
-  alias nv=nvim
+  alias count_words='pdftotext internshipTEK3_luka.camus@epitech.eu_2024.pdf && wc -w internshipTEK3_luka.camus@epitech.eu_2024.txt'
 
 else
 	if [[ ${EUID} == 0 ]] ; then
@@ -139,11 +151,8 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias mv='mv -i'
-
-#alias with make
-alias mtcf='clear ; make tests_run && make coverage && make fclean'      #alias for tests in c (too lazy to type the command)
-alias makr='clear ; make re ; make clean'
-alias makd='clear ; make debug ; make clean'
+alias cd='z'
+alias nv='nvim'
 
 xhost +local:root > /dev/null 2>&1
 
@@ -188,8 +197,13 @@ ex ()
 # . "$HOME/.cargo/env"
 
 export DENO_INSTALL="/home/lukac/.deno"
-export PATH="$PATH:$DENO_INSTALL/bin:$HOME/data/Git-Shortcuts"
+export PATH="$PATH:$DENO_INSTALL/bin:/home/luka/.local/bin"
 export EDITOR="nvim"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/lib"
+export _ZO_ECHO='1'
 
-[ -f "/home/lukac/.ghcup/env" ] && source "/home/lukac/.ghcup/env" # ghcup-env
+eval "$(zoxide init bash)"
+
+# forgit
+[ -f $HOME/Software/forgit/forgit.plugin.zsh ] && source $HOME/Software/forgit/forgit.plugin.zsh
+
+# [ -f "/home/lukac/.ghcup/env" ] && source "/home/lukac/.ghcup/env" # ghcup-env

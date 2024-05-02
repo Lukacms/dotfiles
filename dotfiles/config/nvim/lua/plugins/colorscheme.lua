@@ -3,11 +3,11 @@ return {
         "Mofiqul/vscode.nvim",
         priority = 1000,
         opts = {
-            transparent = true,
+            transparent = false,
             italic_comments = true,
             color_overrides = {
                 vscFront = "#d4d4d4",
-                vscBack = "#1e1e1e",
+                vscBack = "#2E3440",
                 vscLineNumber = "#D7BA7D",
                 vscFoldBackground = "#202d39",
                 -- Syntax colors
@@ -52,8 +52,8 @@ return {
         version = false, -- wait till new 0.7.0 release to put it back on semver
         -- event = "LazyFile",
         opts = {
-            -- symbol = "▏",
-            symbol = "│",
+            symbol = "▏",
+            -- symbol = "│",
             options = { try_as_border = true },
             draw = {
                 delay = 10,

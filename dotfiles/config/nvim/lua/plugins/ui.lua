@@ -65,7 +65,7 @@ return {
         "rcarriga/nvim-notify",
         keys = {
             {
-                "<leader>un",
+                "<leader>n",
                 function()
                     require("notify").dismiss({ silent = true, pending = true })
                 end,
@@ -158,7 +158,7 @@ return {
     {
         "akinsho/git-conflict.nvim",
         version = "*",
-        config = {
+        opts = {
             default_mappings = {
                 ours = "o",
                 theirs = "t",

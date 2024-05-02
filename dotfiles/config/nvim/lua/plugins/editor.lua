@@ -82,7 +82,7 @@ return {
         },
         keys = {
             { "<C-p>", "<cmd>Telescope find_files<CR>" },
-            { "§",     "<cmd>Telescope live_grep<CR>" },
+            { "§", "<cmd>Telescope live_grep<CR>" },
             { "<C-s>", "<cmd>Telescope lsp_document_symbols<CR>" },
             { "<C-f>", "<cmd>Telescope current_buffer_fuzzy_find<CR>" },
         },
@@ -134,6 +134,7 @@ return {
                     ".git/.*",
                     "target/.*",
                     ".yarn",
+                    "nodes_modules",
                 },
             }
         end,
@@ -305,7 +306,7 @@ return {
                 -- Border and scroll bar chars, they respectively represent:
                 --	vline, vline, hline, hline, ulcorner, urcorner, blcorner, brcorner, sbar
                 -- default = {'│', '│', '─', '─', '╭', '╮', '╰', '╯', '█'}
-                border_chars = { '│', '│', '─', '─', '╭', '╮', '╰', '╯', '█' },
+                border_chars = { "│", "│", "─", "─", "╭", "╮", "╰", "╯", "█" },
                 -- Show the window title
                 -- default = true
                 show_title = true,
@@ -328,90 +329,90 @@ return {
                 -- A callback function to decide whether to preview while switching buffer,
                 --  with (bufnr: number, qwinid: number) parameters
                 -- default = nil
-                should_preview_cb = nil
+                should_preview_cb = nil,
             },
             -- The table for {function = key}
             func_map = {
                 -- open the item under the cursor in quickfix window
-                open = '<CR>',
+                open = "<CR>",
                 -- open the item, and close quickfix window
-                openc = 'o',
+                openc = "o",
                 -- use `drop` to open the item, and close quickfix window
-                drop = 'O',
+                drop = "O",
                 -- use `tab drop` to open the item, and close quickfix window
                 -- tabdrop = '',
                 -- open the item in a new tab
-                tab = 't',
+                tab = "t",
                 -- open the item in a new tab, but stay at quickfix window
-                tabb = 'T',
+                tabb = "T",
                 -- open the item in a new tab, and close quickfix window
-                tabc = '<C-t>',
+                tabc = "<C-t>",
                 -- open the item in vertical split
-                split = '<C-x>',
+                split = "<C-x>",
                 -- open the item in horizontal split
-                vsplit = '<C-v>',
+                vsplit = "<C-v>",
                 -- go to previous file under the cursor in quickfix window
-                prevfile = '<C-p>',
+                prevfile = "<C-p>",
                 -- go to next file under the cursor in quickfix window
-                nextfile = '<C-n>',
+                nextfile = "<C-n>",
                 -- go to previous quickfix list in quickfix window
-                prevhist = '<',
+                prevhist = "<",
                 -- go to next quickfix list in quickfix window
-                nexthist = '>',
+                nexthist = ">",
                 -- go to last leaving position in quickfix window
-                lastleave = '\'"',
+                lastleave = "'\"",
                 -- toggle sign and move cursor up
-                stoggleup = '<S-Tab>',
+                stoggleup = "<S-Tab>",
                 -- toggle sign and move cursor down
-                stoggledown = '<Tab>',
+                stoggledown = "<Tab>",
                 -- toggle multiple signs in visual mode
-                stogglevm = '<Tab>',
+                stogglevm = "<Tab>",
                 -- toggle signs for same buffers under the cursor
-                stogglebuf = '\'<Tab>',
+                stogglebuf = "'<Tab>",
                 -- clear the signs in current quickfix list
-                sclear = 'z<Tab>',
+                sclear = "z<Tab>",
                 -- scroll up half-page in preview window
-                pscrollup = '<C-b>',
+                pscrollup = "<C-b>",
                 -- scroll down half-page in preview window
-                pscrolldown = '<C-f>',
+                pscrolldown = "<C-f>",
                 -- scroll back to original position in preview window
-                pscrollorig = 'zo',
+                pscrollorig = "zo",
                 -- toggle preview window between normal and max size
-                ptogglemode = 'zp',
+                ptogglemode = "zp",
                 -- toggle preview for an item of quickfix list
-                ptoggleitem = 'p',
+                ptoggleitem = "p",
                 -- toggle auto preview when cursor moved
-                ptoggleauto = 'P',
+                ptoggleauto = "P",
                 -- create new list for signed items
-                filter = 'zn',
+                filter = "zn",
                 -- create new list for non-signed items
-                filterr = 'zN',
+                filterr = "zN",
                 -- enter fzf mode
-                fzffilter = 'zf',
+                fzffilter = "zf",
             },
             filter = {
                 fzf = {
                     action_for = {
                         -- Press ctrl-t to open up the item in a new tab
                         -- default = 'tabedit'
-                        ['ctrl-t'] = 'tabedit',
+                        ["ctrl-t"] = "tabedit",
                         -- Press ctrl-v to open up the item in a new vertical split
                         -- default = 'vsplit'
-                        ['ctrl-v'] = 'vsplit',
+                        ["ctrl-v"] = "vsplit",
                         -- Press ctrl-x to open up the item in a new horizontal split
                         -- default = 'split'
-                        ['ctrl-x'] = 'split',
+                        ["ctrl-x"] = "split",
                         -- Press ctrl-q to toggle sign for the selected items
                         -- default = 'signtoggle'
-                        ['ctrl-q'] = 'signtoggle',
+                        ["ctrl-q"] = "signtoggle",
                         -- Press ctrl-c to close quickfix window and abort fzf
-                        ['ctrl-c'] = 'closeall',
+                        ["ctrl-c"] = "closeall",
                     },
                     -- Extra options for fzf
                     -- default = {'--bind', 'ctrl-o:toggle-all'}
-                    extra_opts = { '--bind', 'ctrl-o:toggle-all' }
-                }
-            }
-        }
-    }
+                    extra_opts = { "--bind", "ctrl-o:toggle-all" },
+                },
+            },
+        },
+    },
 }
