@@ -5,6 +5,7 @@
         "width": 30
     },
     "modules": [
+        "break",
         "title",
         "separator",
         "os",
@@ -31,6 +32,7 @@
             "type": "gpu",
             "temp": true
         },
+        "media",
         "memory",
         "swap",
         "disk",
@@ -40,7 +42,8 @@
         "locale",
         "sound",
         "break",
-        "colors"
+        "colors",
+        "break"
     ],
     "display": {
         "color": "bright_magenta",

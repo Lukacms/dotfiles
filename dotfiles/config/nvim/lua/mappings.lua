@@ -1,5 +1,3 @@
--- {{@@ header() @@}}
-
 local map = require("utils").map
 
 -- set leader key
