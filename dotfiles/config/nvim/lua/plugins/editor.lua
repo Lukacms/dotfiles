@@ -118,7 +118,7 @@ return {
                         i = {
                             ["<C-k>"] = actions.move_selection_previous,
                             ["<C-j>"] = actions.move_selection_next,
-                            ["<esc>"] = actions.close,
+                            -- ["<esc><esc>"] = actions.close,
                         },
                     },
                 },

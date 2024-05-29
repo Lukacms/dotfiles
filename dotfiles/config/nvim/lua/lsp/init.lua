@@ -44,7 +44,7 @@ local on_attach = function(client, bufnr)
     u.buf_map(bufnr, "n", "<C-c>", ":CodeActionMenu<CR>")
     u.buf_map(bufnr, "n", "<leader>d", vim.diagnostic.open_float)
     u.buf_map(bufnr, "n", "<leader>r", vim.lsp.buf.rename)
-    u.buf_map(bufnr, "n", "<C-d>", ":Trouble document_diagnostics<CR>")
+    u.buf_map(bufnr, "n", "<C-x>", ":Trouble document_diagnostics<CR>")
 
     if client.supports_method("textDocument/formatting") then
         u.buf_command(bufnr, "LspFormatting", function()
@@ -78,9 +78,10 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local servers_names = {
     "bashls",
+    -- "basedpyright",
     "clangd",
     "cmake",
-    "csharp-ls",
+    -- "csharp-ls",
     "cssmodules_ls",
     "dockerls",
     "elixirls",

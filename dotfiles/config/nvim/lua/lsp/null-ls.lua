@@ -20,7 +20,7 @@ local sources = {
             or b.formatting.eslint_d
     end,
 
-    b.formatting.black,
+    -- b.formatting.black,
     b.formatting.stylua,
     null_ls.builtins.formatting.gofumpt,
     null_ls.builtins.formatting.goimports_reviser,
