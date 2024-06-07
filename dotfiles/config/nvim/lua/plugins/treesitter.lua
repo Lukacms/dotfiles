@@ -34,6 +34,7 @@ return {
                 "rust",
                 "svelte",
                 "typescript",
+                "vimdoc",
                 "yaml",
             },
             sync_install = true,
@@ -46,10 +47,10 @@ return {
             incremental_selection = {
                 enable = true,
                 keymaps = {
-                    init_selection = 'vb',
-                    scope_incremental = '<CR>',
-                    node_incremental = '<TAB>',
-                    node_decremental = '<S-TAB>',
+                    init_selection = "vb",
+                    scope_incremental = "<CR>",
+                    node_incremental = "<TAB>",
+                    node_decremental = "<S-TAB>",
                 },
             },
             playground = {

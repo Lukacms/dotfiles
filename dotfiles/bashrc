@@ -39,7 +39,7 @@ colors() {
 tmp() {
     $EDITOR `mktemp -u --suffix=.${1:-md}`
 }
-neofetch
+fastfetch
 
 set -o vi # --> maybe, if I wanna have bash with vim shortcuts
 
@@ -133,7 +133,6 @@ if ${use_color} ; then
   alias again='exec bash'
   alias commit-count='git log --oneline | wc -l '
   alias commit-count-user='git shortlog -s'
-  alias count_words='pdftotext internshipTEK3_luka.camus@epitech.eu_2024.pdf && wc -w internshipTEK3_luka.camus@epitech.eu_2024.txt'
 
 else
 	if [[ ${EUID} == 0 ]] ; then
@@ -197,7 +196,7 @@ ex ()
 # . "$HOME/.cargo/env"
 
 export DENO_INSTALL="/home/lukac/.deno"
-export PATH="$PATH:$DENO_INSTALL/bin:/home/luka/.local/bin"
+export PATH="$PATH:$DENO_INSTALL/bin:/$HOME/.local/bin:/$HOME/Software/dbeaver"
 export EDITOR="nvim"
 export _ZO_ECHO='1'
 
@@ -207,3 +206,4 @@ eval "$(zoxide init bash)"
 [ -f $HOME/Software/forgit/forgit.plugin.zsh ] && source $HOME/Software/forgit/forgit.plugin.zsh
 
 # [ -f "/home/lukac/.ghcup/env" ] && source "/home/lukac/.ghcup/env" # ghcup-env
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/bashrc"

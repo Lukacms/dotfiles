@@ -32,7 +32,6 @@
             "type": "gpu",
             "temp": true
         },
-        "media",
         "memory",
         "swap",
         "disk",
@@ -40,6 +39,7 @@
         "battery",
         "poweradapter",
         "locale",
+        "media",
         "sound",
         "break",
         "colors",

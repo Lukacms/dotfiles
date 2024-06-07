@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+
+config_dir="$HOME/.local/share/monitorcontrol"
+
+function reload_wm {
+    sh -c "~/.config/i3/scripts/reload.sh"
+}
+
+function choose_category {
+    choices=("use preset" "arrange monitors")
+    choice=$(printf '%s\n' "${choices[@]}" | rofi -dmenu)
+
+    case $choice in
+        "${choices[0]}")
+          choose_preset
+          ;;
+        "${choices[1]}")
+          arrange_monitors
+          ;;
+    esac
+}
+
+function arrange_monitors {
+    target=$(xrandr -q | grep " connected" | cut -d' ' -f1 | rofi -dmenu)
+
+    if [ -z "$target" ]; then
+        exit
+    fi
+
+    # if target monitor is active:
+    if [ "$(xrandr --listactivemonitors | grep $target | wc -l)" -eq 1 ]; then
+        action=$(echo -e "move\nturn off\nrotate" | rofi -dmenu)
+    else
+        action=$(echo "turn on" | rofi -dmenu)
+    fi
+
+    case $action in
+        "move")
+            position=$(echo -e "left-of\nright-of\nabove\nbelow" | rofi -dmenu)
+            reference=$(xrandr -q | grep " connected" | cut -d' ' -f1 | grep -v $target | rofi -dmenu)
+            xrandr --output $target --$position $reference
+            ;;
+        "turn off")
+            xrandr --output $target --off
+            reload_wm
+            ;;
+        "rotate")
+            rotation=$(echo -e "inverted\nleft\nnormal\nright" | rofi -dmenu)
+            xrandr --output $target --rotate $rotation
+            ;;
+        "turn on")
+            xrandr --output $target --auto
+            reload_wm
+            ;;
+    esac
+}
+
+function choose_preset {
+    presets_dir="$HOME/.screenlayout"
+    echo $presets_dir
+    choices=( $(ls $presets_dir) )
+    choice=$(printf '%s\n' "${choices[@]}" | rofi -dmenu)
+
+    if [ -z "$choice" ]; then
+        exit
+    fi
+    sh -c "$(cat $presets_dir/$choice)"
+    reload_wm
+}
+
+choose_category

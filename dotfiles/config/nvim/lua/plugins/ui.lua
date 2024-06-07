@@ -36,11 +36,9 @@ return {
 
             require("lualine").setup({
                 tabline = {
-                    lualine_c = { require("tabline").tabline_buffers },
+                    lualine_c = { winbar_filename },
                     lualine_x = { require("tabline").tabline_tabs },
                 },
-                winbar = { lualine_c = { winbar_filename } },
-                inactive_winbar = { lualine_c = { winbar_filename } },
                 status_line = {
                     lualine_a = { "mode" },
                     lualine_b = { "branch", diagnostics },
@@ -50,7 +48,7 @@ return {
                     lualine_z = { "location", "progress" },
                 },
                 options = {
-                    theme = theme,
+                    theme = "codedark",
                     disabled_filetypes = { "packer", "neo-tree" },
                     ignore_focus = { "neo-tree" },
                     globalstatus = true,
@@ -65,7 +63,7 @@ return {
         "rcarriga/nvim-notify",
         keys = {
             {
-                "<leader>un",
+                "<leader>n",
                 function()
                     require("notify").dismiss({ silent = true, pending = true })
                 end,
@@ -136,18 +134,18 @@ return {
     {
         "keklleo/tabline.nvim",
         opts = {
-            enable = true,
+            enable = false,
             options = {
                 section_separators = { "", "" },
                 component_separators = { "", "" },
                 max_bufferline_percent = 66, -- set to nil by default, and it uses vim.o.columns * 2/3
-                show_tabs_always = false, -- this shows tabs only when there are more than one tab or if the first tab is named
+                show_tabs_always = true, -- this shows tabs only when there are more than one tab or if the first tab is named
                 show_devicons = true, -- this shows devicons in buffer section
                 show_bufnr = false, -- this appends [bufnr] to buffer section,
                 show_filename_only = false, -- shows base filename only instead of relative path in filename
                 modified_icon = "+ ", -- change the default modified icon
                 modified_italic = false, -- set to true by default; this determines whether the filename turns italic if modified
-                show_tabs_only = false, -- this shows only tabs instead of tabs + buffers
+                show_tabs_only = true, -- this shows only tabs instead of tabs + buffers
             },
         },
         dependencies = {
@@ -172,7 +170,7 @@ return {
     {
         "akinsho/git-conflict.nvim",
         version = "*",
-        config = {
+        opts = {
             default_mappings = {
                 ours = "o",
                 theirs = "t",

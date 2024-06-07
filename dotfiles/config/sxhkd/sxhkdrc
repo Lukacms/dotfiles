@@ -62,7 +62,7 @@ super + shift + s
 # alt + @Print: take a screenshot of a the focused window and copy to clipboard
 # add ctrl to save to file instead of copy to clipboard
 {_,shift + ,alt + }{ctrl + ,_} @Print
-  scrot {-e,-fs -e,-ue} {'mkdir -p ~/screenshots && mv $f ~/screenshots','xclip -sel clip -target image/png -i $f && rm $f'}
+  scrot {-e,-fs -e,-ue} {'mkdir -p ~/screenshots && mv $f ~/screenshots && notify-send "saved screenshot in ~/screenshots/"','xclip -sel clip -target image/png -i $f && rm $f'}
 
 # mute microphone
 XF86AudioMicMute

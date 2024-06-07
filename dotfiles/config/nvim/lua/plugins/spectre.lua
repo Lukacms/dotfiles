@@ -3,7 +3,7 @@ return {
     cmd = "Spectre",
     keys = {
         {
-            "<leader>sr",
+            "<C-h>",
             function()
                 require("spectre").open()
             end,

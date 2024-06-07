@@ -118,6 +118,35 @@ dotfiles:
   d_fastfetch:
     src: config/fastfetch
     dst: ~/.config/fastfetch
+  f_monitorcontrol:
+    src: local/bin/monitorcontrol
+    dst: ~/.local/bin/monitorcontrol
+    chmod: '755'
+  f_xlight:
+    src: local/bin/xlight
+    dst: ~/.local/bin/xlight
+    chmod: '755'
+  f_idlelock:
+    src: local/bin/idlelock
+    dst: ~/.local/bin/idlelock
+    chmod: '755'
+  f_chwp:
+    src: local/bin/chwp
+    dst: ~/.local/bin/chwp
+    chmod: '755'
+  f_term.sh:
+    src: profile.d/term.sh
+    dst: ~/.profile.d/term.sh
+  f_profile:
+    src: profile
+    dst: ~/.profile
+  f_theming.sh:
+    src: profile.d/theming.sh
+    dst: ~/.profile.d/theming.sh
+    chmod: '755'
+  f_forgit.plugin.zsh:
+    src: Software/forgit/forgit.plugin.zsh
+    dst: ~/Software/forgit/forgit.plugin.zsh
 profiles:
   home:
     dotfiles:
@@ -168,3 +197,11 @@ profiles:
     - d_picom
     - f_editorconfig
     - d_fastfetch
+    - f_monitorcontrol
+    - f_xlight
+    - f_idlelock
+    - f_chwp
+    - f_term.sh
+    - f_profile
+    - f_theming.sh
+    - f_forgit.plugin.zsh
