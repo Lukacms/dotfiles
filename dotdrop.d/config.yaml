@@ -144,9 +144,6 @@ dotfiles:
     src: profile.d/theming.sh
     dst: ~/.profile.d/theming.sh
     chmod: '755'
-  f_forgit.plugin.zsh:
-    src: Software/forgit/forgit.plugin.zsh
-    dst: ~/Software/forgit/forgit.plugin.zsh
 profiles:
   home:
     dotfiles:
@@ -204,4 +201,3 @@ profiles:
     - f_term.sh
     - f_profile
     - f_theming.sh
-    - f_forgit.plugin.zsh
