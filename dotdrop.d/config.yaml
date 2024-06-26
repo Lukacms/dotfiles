@@ -144,6 +144,9 @@ dotfiles:
     src: profile.d/theming.sh
     dst: ~/.profile.d/theming.sh
     chmod: '755'
+  d_screenlayout:
+    src: screenlayout
+    dst: ~/.screenlayout
 profiles:
   home:
     dotfiles:
@@ -201,3 +204,4 @@ profiles:
     - f_term.sh
     - f_profile
     - f_theming.sh
+    - d_screenlayout
