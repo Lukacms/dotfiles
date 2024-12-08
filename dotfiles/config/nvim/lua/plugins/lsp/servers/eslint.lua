@@ -26,7 +26,7 @@ M.setup = function(on_attach, capabilities)
                 },
             },
             codeActionOnSave = {
-                enable = false,
+                enable = true,
                 mode = 'all',
             },
             format = false,

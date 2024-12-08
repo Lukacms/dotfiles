@@ -1,1 +1,11 @@
-{}
+{
+    "header": {
+        "prefix": "struct",
+        "body": [
+            "pub struct $1 {",
+            "}",
+            "$0"
+        ],
+        "description": "code snippet for rust struct"
+    }
+}

@@ -18,14 +18,20 @@ return {
                 visual = mode_highlight(colors.glabe_green),
             }
 
+            local diag_icons = require('config').icons.diagnostics
             local diagnostics = {
-                "diagnostics",
-                sources = { "nvim_diagnostic" },
-                color_error = colors.sunset_orange,
-                color_warn = colors.equator,
-                color_info = colors.mountain_meadow,
-                color_hint = colors.light_grey,
-                symbols = { error = " ", warn = " ", info = " ", hint = " " },
+                'diagnostics',
+                sources = { 'nvim_diagnostic' },
+                color_error = colors.vscRed,
+                color_warn = colors.vscOrange,
+                color_info = colors.vscYellow,
+                color_hint = colors.vscFront,
+                symbols = {
+                  error = diag_icons.Error .. ' ',
+                  warn = diag_icons.Warn .. ' ',
+                  info = diag_icons.Hint .. ' ',
+                  hint = diag_icons.Info .. ' ',
+                },
             }
 
             local winbar_filename = {
@@ -34,29 +40,54 @@ return {
                 shorting_target = 20,
             }
 
-            require("lualine").setup({
-                tabline = {
-                    lualine_c = { winbar_filename },
-                    lualine_x = { require("tabline").tabline_tabs },
+            local navic = require('nvim-navic')
+                  return {
+                    tabline = {
+                      lualine_a = {
+                        'tabs',
+                      },
+                    },
+                    winbar = { lualine_c = { winbar_filename } },
+                    inactive_winbar = { lualine_c = { winbar_filename } },
+                    sections = {
+                      lualine_a = { 'mode' },
+                      lualine_b = { 'branch', diagnostics },
+                      lualine_c = {
+                        'filename',
+                        {
+                          function()
+                            return navic.get_location()
+                          end,
+                          cond = function()
+                            return navic.is_available()
+                          end,
+                        },
+                      },
+                      lualine_x = { 'encoding', 'fileformat' },
+                      lualine_y = { 'filetype' },
+                      lualine_z = { 'location', 'progress' },
+                    },
+                    options = {
+                      theme = theme,
+                      disabled_filetypes = { 'packer', 'neo-tree' },
+                      ignore_focus = { 'neo-tree' },
+                      globalstatus = true,
+                    },
+                    extensions = {},
+                  }
+                end,
+                dependencies = {
+                  { 'nvim-tree/nvim-web-devicons' },
+                  {
+                    'SmiteshP/nvim-navic',
+                    dependencies = 'neovim/nvim-lspconfig',
+                    opts = function()
+                      local icons = require('config').icons.kinds
+
+                      return { icons = icons }
+                    end,
+                  },
                 },
-                status_line = {
-                    lualine_a = { "mode" },
-                    lualine_b = { "branch", diagnostics },
-                    lualine_c = { "filename" },
-                    lualine_x = { "encoding", "fileformat" },
-                    lualine_y = { "filetype" },
-                    lualine_z = { "location", "progress" },
-                },
-                options = {
-                    theme = "codedark",
-                    disabled_filetypes = { "packer", "neo-tree" },
-                    ignore_focus = { "neo-tree" },
-                    globalstatus = true,
-                },
-                extensions = {},
-            })
-        end,
-        dependencies = { { "nvim-tree/nvim-web-devicons" } },
     },
 
     {
@@ -133,21 +164,7 @@ return {
     },
     {
         "keklleo/tabline.nvim",
-        opts = {
-            enable = false,
-            options = {
-                section_separators = { "", "" },
-                component_separators = { "", "" },
-                max_bufferline_percent = 66, -- set to nil by default, and it uses vim.o.columns * 2/3
-                show_tabs_always = true, -- this shows tabs only when there are more than one tab or if the first tab is named
-                show_devicons = true, -- this shows devicons in buffer section
-                show_bufnr = false, -- this appends [bufnr] to buffer section,
-                show_filename_only = false, -- shows base filename only instead of relative path in filename
-                modified_icon = "+ ", -- change the default modified icon
-                modified_italic = false, -- set to true by default; this determines whether the filename turns italic if modified
-                show_tabs_only = true, -- this shows only tabs instead of tabs + buffers
-            },
-        },
+        opts = { enable = false },
         dependencies = {
             { "hoob3rt/lualine.nvim" },
             { "nvim-tree/nvim-web-devicons" },

@@ -76,8 +76,8 @@ M.did_init = false
 function M.init()
   if not M.did_init then
     M.did_init = true
-    -- require('config.options')
-    -- require('config.keymaps')
+    require('config.options')
+    require('config.mappings')
   end
 end
 

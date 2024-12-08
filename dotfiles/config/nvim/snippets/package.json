@@ -24,6 +24,18 @@
             {
                 "language": "go",
                 "path": "./golang.json"
+            },
+            {
+                "language": "svelte",
+                "path": "./svelte.json"
+            },
+            {
+                "language": "rust",
+                "path": "./rust.json"
+            },
+            {
+                "language": "markdown",
+                "path": "./md.json"
             }
         ]
     }

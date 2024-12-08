@@ -1,0 +1,14 @@
+{
+    "l_arrow": {
+        "prefix": "<-",
+        "body": "&larr;"
+    },
+    "r_arrow": {
+        "prefix": "->",
+        "body": "&rarr;"
+    },
+    "rl_arrow": {
+        "prefix": "<->",
+        "body": "&rlarr;"
+    }
+}

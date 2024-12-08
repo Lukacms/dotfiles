@@ -11,6 +11,7 @@
             "    ~$1() = default;",
             "",
             "    $1& operator=($1 const& to_copy) = default;",
+            "    $1& operator=($1 &&to_move) = default;",
             "",
             "  private:",
             "};",
