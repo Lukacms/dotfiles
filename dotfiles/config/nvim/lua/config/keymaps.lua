@@ -21,6 +21,12 @@ vim.keymap.del("n", "<s-l>", { desc = "next buffer" })
 map("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>")
 map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>")
 
+-- Resize buffer size
+map("n", "<Up>", "<C-w>2-")
+map("n", "<Down>", "<C-w>2+")
+map("n", "<Left>", "<C-w>2<")
+map("n", "<Right>", "<C-w>2>")
+
 -- In visual block mode, enter insert mode with i instead of I
 map("x", "i", "I")
 
@@ -45,3 +51,11 @@ map("v", "p", "pgvy")
 vim.keymap.del("n", "<leader>uS", { desc = "Snacks toggle smooth scroll" })
 
 require("config.qf").setup({ default_bindings = true })
+
+-- map code-action to more intuitive keymap
+map({ "n", "v" }, "<C-c>", function()
+  vim.lsp.buf.code_action()
+end)
+
+-- rename item w/ lsp
+map({ "n", "v" }, "<leader>r", vim.lsp.buf.rename)

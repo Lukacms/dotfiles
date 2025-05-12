@@ -36,9 +36,13 @@ super + e
 ctrl + alt + Delete
   kitty -e htop
 
-# Spotify control
+# Music control (Qobuz)
 super + m; {h,Return,l}
-  playerctl -p chromium,spotify,spotifyd {previous,play-pause,next}
+  playerctl -p firefox {previous,play-pause,next}
+
+# launch qobuz on separate window
+super + space
+  firefox -P qobuz --kiosk --new-window https://play.qobuz.com --window-size 1224
 
 # make sxhkd reload its configuration files:
 super + shift + r

@@ -97,5 +97,19 @@
             "}"
         ],
         "description": "Test criterion"
+    },
+    "header_halmstad": {
+        "prefix": "halmstad",
+        "body": [
+            "/*",
+            "** Halmstad project, 2025",
+            "** ${1:ProjectName}",
+            "** File description:",
+            "** ${2:FileDescription}",
+            "*/",
+            "",
+            "$0"
+        ],
+        "description": "Code snippet for header"
     }
 }
