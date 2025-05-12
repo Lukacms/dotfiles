@@ -30,7 +30,7 @@ super + shift + w
 
 # launch file explorer
 super + e
-  ranger
+  dolphin
 
 # launch process viewer
 ctrl + alt + Delete
@@ -38,7 +38,7 @@ ctrl + alt + Delete
 
 # Spotify control
 super + m; {h,Return,l}
-  playerctl -p spotify,spotifyd {previous,play-pause,next}
+  playerctl -p chromium,spotify,spotifyd {previous,play-pause,next}
 
 # make sxhkd reload its configuration files:
 super + shift + r
@@ -62,32 +62,30 @@ super + shift + s
 # alt + @Print: take a screenshot of a the focused window and copy to clipboard
 # add ctrl to save to file instead of copy to clipboard
 {_,shift + ,alt + }{ctrl + ,_} @Print
-  scrot {-e,-fs -e,-ue} {'mkdir -p ~/screenshots && mv $f ~/screenshots && notify-send "saved screenshot in ~/screenshots/"','xclip -sel clip -target image/png -i $f && rm $f'}
-
-# mute microphone
-XF86AudioMicMute
-  pactl set-source-mute @DEFAULT_SOURCE@ toggle
+  scrot {-e,-fs -e,-ue} {'mkdir -p ~/screenshots && mv $f ~/screenshots','xclip -sel clip -target image/png -i $f && rm $f'}
 
 # mute sound
 XF86AudioMute
-  pactl set-sink-mute @DEFAULT_SINK@ toggle
+  amixer set Master toggle
 
 # raise/lower volume
 XF86Audio{Raise,Lower}Volume
-  pactl set-sink-volume @DEFAULT_SINK@ {+5%,-5%}
+  amixer set Master {5%+,5%-} unmute
 
 # mute microphone
 # XF86AudioMicMute
 
 # raise laptop brightness
 XF86MonBrightnessUp
-  light -A 5
-  # xbacklight -inc 5
+  brightnessctl s +10%
+  # NOTE light need sudo now, changing to brightnessctl
+  # light -A 5
 
 # lower laptop brightness
 XF86MonBrightnessDown
-  light -U 5
-  # xbacklight -dec 5
+  brightnessctl s 10%-
+  # NOTE light need sudo now, changing to brightnessctl
+  # light -U 5
 
 # display options
 XF86Display
