@@ -54,4 +54,7 @@ return {
       automatic_installation = true,
     },
   },
+  {
+    "sakhnik/nvim-gdb",
+  },
 }

@@ -147,6 +147,10 @@ dotfiles:
   d_screenlayout:
     src: screenlayout
     dst: ~/.screenlayout
+  f_forgit.plugin.sh:
+    src: Software/forgit/forgit.plugin.sh
+    dst: ~/Software/forgit/forgit.plugin.sh
+    chmod: '755'
 profiles:
   home:
     dotfiles:
@@ -205,3 +209,4 @@ profiles:
     - f_profile
     - f_theming.sh
     - d_screenlayout
+    - f_forgit.plugin.sh

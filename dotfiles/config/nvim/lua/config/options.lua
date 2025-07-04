@@ -10,7 +10,18 @@ vim.g.mapleader = ","
 -- Lazy -----------------------------------------------------------------------
 
 vim.g.root_spec = {
-  { ".git", "lua", "go.mod", "setup.py", "package.json", "Makefile", "justfile", "Dockerfile", "init.lua", "svelte.config.js" },
+  {
+    ".git",
+    "lua",
+    "go.mod",
+    "setup.py",
+    "package.json",
+    "Makefile",
+    "justfile",
+    "Dockerfile",
+    "init.lua",
+    "svelte.config.js",
+  },
   "lsp",
   "cwd",
 }
@@ -23,6 +34,8 @@ opt.scrolloff = 999
 opt.sidescrolloff = 8
 opt.colorcolumn = "80"
 opt.mouse = "c" -- disable mouse
+opt.linebreak = true
+opt.wrap = true
 
 -- Edition --------------------------------------------------------------------
 

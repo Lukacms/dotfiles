@@ -1,6 +1,30 @@
 [user]
 	email = luka.camus@epitech.eu
-	name = Luka Camus
+    name = Luka Camus
+
 [core]
 	excludesFile = /home/lukac/.gitignore
 	editor = nvim
+
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[delta]
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    syntax-theme = Monokai Extended
+    navigate = true
+    side-by-side = true
+
+[interactive]
+    diffFilter = delta --color-only
+[push]
+	autoSetupRemote = true
+
+[alias]
+    fx = ! git log --oneline | fzf --preview='git diff --color=always {1}^ {1}' | cut -d' ' -f1 | xargs -I {} sh -c 'git commit --fixup {} && git rebase -i --autosquash {}~'
+[init]
+	defaultBranch = main
