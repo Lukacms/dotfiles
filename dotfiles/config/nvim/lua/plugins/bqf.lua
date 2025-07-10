@@ -88,9 +88,9 @@ return {
       -- clear the signs in current quickfix list
       sclear = "z<Tab>",
       -- scroll up half-page in preview window
-      -- pscrollup = "<C-b>",
+      pscrollup = "<C-(>",
       -- scroll down half-page in preview window
-      -- pscrolldown = "<C-f>",
+      pscrolldown = "<C-)>",
       -- scroll back to original position in preview window
       pscrollorig = "zo",
       -- toggle preview window between normal and max size

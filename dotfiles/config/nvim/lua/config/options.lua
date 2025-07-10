@@ -34,8 +34,8 @@ opt.scrolloff = 999
 opt.sidescrolloff = 8
 opt.colorcolumn = "80"
 opt.mouse = "c" -- disable mouse
+opt.wrap = true -- Display long lines as multiple lines
 opt.linebreak = true
-opt.wrap = true
 
 -- Edition --------------------------------------------------------------------
 
@@ -45,6 +45,7 @@ opt.errorbells = false
 opt.fixeol = false
 opt.eol = false
 opt.binary = true
+vim.g.editorconfig = true
 
 -- Search ---------------------------------------------------------------------
 

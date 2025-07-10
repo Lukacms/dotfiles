@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=xset r rate 200 50
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en]=Speeeed
+Name=Speeeed
+Comment[en]=xset -> go a bit faster on keyboard
+Comment=xset -> go a bit faster on keyboard

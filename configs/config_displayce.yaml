@@ -1,0 +1,48 @@
+config:
+    backup: true
+    create: true
+    dotpath: ../dotfiles
+    ignoreempty: false
+dotfiles:
+    d_nvim:
+        src: config/nvim
+        dst: ~/.config/nvim
+    d_autostart:
+        src: config/autostart
+        dst: ~/.config/autostart
+        chmod: "700"
+    d_kitty:
+        src: config/kitty
+        dst: ~/.config/kitty
+    d_fastfetch:
+        src: config/fastfetch
+        dst: ~/.config/fastfetch
+    d_rofi:
+        src: config/rofi
+        dst: ~/.config/rofi
+    f_gitconfig:
+        src: gitconfig
+        dst: ~/.gitconfig
+    f_gitignore:
+        src: gitignore
+        dst: ~/.gitignore
+    f_bashrc:
+        src: bashrc
+        dst: ~/.bashrc
+        chmod: "644"
+    d_profile.d:
+        src: profile.d
+        dst: ~/.profile.d
+        chmod: "755"
+profiles:
+    lukac:
+        dotfiles:
+            - d_nvim
+            - d_autostart
+            - d_kitty
+            - d_fastfetch
+            - d_rofi
+            - f_gitconfig
+            - f_gitignore
+            - f_bashrc
+            - d_profile.d

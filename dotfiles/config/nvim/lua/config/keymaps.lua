@@ -18,6 +18,7 @@ map("n", "<leader>lg", "<cmd>lua Snacks.lazygit()<cr>")
 map("n", "T", ":tabnew<cr>")
 vim.keymap.del("n", "<s-h>", { desc = "prev buffer" })
 vim.keymap.del("n", "<s-l>", { desc = "next buffer" })
+vim.keymap.del("n", "<C-f>", { desc = "scroll" })
 map("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>")
 map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>")
 

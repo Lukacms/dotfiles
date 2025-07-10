@@ -32,10 +32,10 @@ return {
         "prettier",
         "pyright",
         "ruff",
-        "ruff-lsp",
         "shellcheck",
         "shfmt",
         "sqlls",
+        "sqlfluff",
         "stylua",
         "svelte-language-server",
         "tailwindcss-language-server",
@@ -43,7 +43,7 @@ return {
       },
     },
   },
-  -- { "mason-org/mason-lspconfig.nvim", version = "^1.0.0" },
+  { "mason-org/mason-lspconfig.nvim", version = "^1.0.0" },
   {
     "jay-babu/mason-nvim-dap.nvim",
     opts = {
@@ -53,8 +53,5 @@ return {
       },
       automatic_installation = true,
     },
-  },
-  {
-    "sakhnik/nvim-gdb",
   },
 }

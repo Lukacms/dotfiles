@@ -1,3 +1,3 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-export TERM='kitty'
+export TERM=xterm-256color
