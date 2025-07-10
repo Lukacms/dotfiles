@@ -1,0 +1,5 @@
+java openjdk-24
+python 3.10.0
+golang 1.23.2
+golangci-lint 1.60.1
+nodejs 24.3.0
