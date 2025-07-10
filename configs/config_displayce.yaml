@@ -40,6 +40,9 @@ dotfiles:
   f_tool-versions:
     src: tool-versions
     dst: ~/.tool-versions
+  f_black:
+    src: config/black
+    dst: ~/.config/black
 profiles:
   lukac:
     dotfiles:
@@ -54,3 +57,4 @@ profiles:
     - d_profile.d
     - f_editorconfig
     - f_tool-versions
+    - f_black
