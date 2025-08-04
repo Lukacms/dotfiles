@@ -1,6 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-	tag = 'v0.9.3',
+  tag = "v0.9.3",
   opts = {
     ensure_installed = {
       "bash",
@@ -15,6 +15,7 @@ return {
       "latex",
       "lua",
       "markdown",
+      "markdown_inline",
       "python",
       "rust",
       "typescript",
@@ -25,6 +26,7 @@ return {
       "just",
       "hcl",
       "toml",
+      "vim",
     },
   },
 }

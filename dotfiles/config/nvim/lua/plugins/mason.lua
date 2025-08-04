@@ -43,15 +43,25 @@ return {
       },
     },
   },
-  { "mason-org/mason-lspconfig.nvim", version = "^1.0.0" },
+  {
+    "mason-org/mason-lspconfig.nvim" --[[ , version = "^1.0.0" ]],
+  },
   {
     "jay-babu/mason-nvim-dap.nvim",
+    dependencies = "mason.nvim",
+    cmd = { "DapInstall", "DapUninstall" },
     opts = {
-      ensure_installed = {
-        "python",
-        "delve",
-      },
+      ensure_installed = nil,
+
+      -- see mason-nvim-dap README for more information
+      handlers = nil,
+
+      -- You'll need to check that you have the required things installed
+      -- online, please don't ask me how to install them :)
       automatic_installation = true,
     },
+    -- mason-nvim-dap is loaded when nvim-dap loads
+    config = function() end,
   },
 }
+-- You can provide additional configuration to the handlers,
