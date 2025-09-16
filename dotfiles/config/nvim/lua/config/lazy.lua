@@ -48,7 +48,7 @@ require("lazy").setup({
       -- disable some rtp plugins
       disabled_plugins = {
         "gzip",
-        "nvim-snippets",
+        -- "nvim-snippets",
         -- "matchit",
         -- "matchparen",
         -- "netrwPlugin",

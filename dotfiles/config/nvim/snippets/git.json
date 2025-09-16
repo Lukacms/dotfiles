@@ -1,0 +1,37 @@
+{
+    "feat": {
+        "prefix": "feat",
+        "body": [
+            "feat($1): $2"
+        ],
+        "description": "feat"
+    },
+    "fix": {
+        "prefix": "fix",
+        "body": [
+            "fix($1): $2"
+        ],
+        "description": "feat"
+    },
+    "chore": {
+        "prefix": "chore",
+        "body": [
+            "chore($1): $2"
+        ],
+        "description": "feat"
+    },
+    "ci": {
+        "prefix": "ci",
+        "body": [
+            "ci($1): $2"
+        ],
+        "description": "feat"
+    },
+    "doc": {
+        "prefix": "doc",
+        "body": [
+            "doc($1): $2"
+        ],
+        "description": "feat"
+    }
+}

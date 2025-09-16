@@ -36,6 +36,10 @@
             {
                 "language": "markdown",
                 "path": "./md.json"
+            },
+            {
+                "language": "gitcommit",
+                "path": "./git.json"
             }
         ]
     }

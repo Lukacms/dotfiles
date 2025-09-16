@@ -1,5 +1,4 @@
 local map = require("utils").map
-
 -- set leader key
 vim.g.mapleader = ","
 
@@ -39,5 +38,5 @@ map("n", "<c-t>r", ':lua require("neotest").run.run()<CR>')
 map("n", "<c-t>R", ':lua require("neotest").run.run(vim.fn.expand("%"))<CR>')
 
 -- https://github.com/mhinz/vim-galore#dont-lose-selection-when-shifting-sidewards
-map('v', '<', '<gv')
-map('v', '>', '>gv')
+map("v", "<", "<gv")
+map("v", ">", ">gv")
