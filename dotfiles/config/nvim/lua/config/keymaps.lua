@@ -23,6 +23,7 @@ vim.keymap.del("n", "<C-h>", { desc = "shortcut for left window" })
 vim.keymap.del("n", "<C-f>", { desc = "scroll" })
 map("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>")
 map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>")
+map("n", "<C-f>", "<cmd>Telescope current_buffer_fuzzy_find<CR>")
 
 -- Resize buffer size
 map("n", "<Up>", "<C-w>2-")
@@ -46,6 +47,12 @@ map("n", "<C-d>", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>")
 -- Re-select selection after moving it left/right with </>
 map("v", "<", "<gv")
 map("v", ">", ">gv")
+
+-- tab navigation
+-- map("n", "<Tab>", ":tabprevious<CR>")
+-- map("n", "<S-Tab>", ":tabnext<CR>")
+map("n", "T", ":tabnew<CR>")
+map("n", "C", ":tabclose<CR>")
 
 -- Preserve clipboard when pasting over selection
 map("v", "p", "pgvy")

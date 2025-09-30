@@ -9,8 +9,8 @@ map("n", ";", ":")
 map({ "i", "v" }, "jk", "<Esc>")
 
 -- tab navigation
-map("n", "<leader>H", ":tabprevious<CR>")
-map("n", "<leader>L", ":tabnext<CR>")
+map("n", "<Tab>", ":tabprevious<CR>")
+map("n", "<S-Tab>", ":tabnext<CR>")
 map("n", "T", ":tabnew<CR>")
 map("n", "C", ":tabclose<CR>")
 

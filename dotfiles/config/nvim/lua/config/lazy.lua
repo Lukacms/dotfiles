@@ -53,6 +53,8 @@ require("lazy").setup({
         -- "matchparen",
         -- "netrwPlugin",
         "tarPlugin",
+        "codeium.nvim",
+        "supermaven-nvim",
         "guard",
         "tohtml",
         "tutor",
