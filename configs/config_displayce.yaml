@@ -43,6 +43,9 @@ dotfiles:
   f_black:
     src: config/black
     dst: ~/.config/black
+  f_pyrightconfig.json:
+    src: config/pyrightconfig.json
+    dst: ~/.config/pyrightconfig.json
 profiles:
   lukac:
     dotfiles:
@@ -58,3 +61,4 @@ profiles:
     - f_editorconfig
     - f_tool-versions
     - f_black
+    - f_pyrightconfig.json

@@ -62,3 +62,17 @@ opt.swapfile = false
 opt.undodir = vim.fn.expand("~/.nvim/tmp/undo/")
 opt.backupdir = vim.fn.expand("~/.nvim/tmp/backup/")
 opt.directory = vim.fn.expand("~/.nvim/tmp/swap/")
+
+--- LSP -----------------------------------------------------------------------
+vim.g.lazyvim_python_lsp = "basedpyright"
+-- vim.g.lazyvim_python_lsp = "pyright"
+vim.diagnostic.config({
+  -- Use the default configuration
+  virtual_lines = true,
+
+  -- Alternatively, customize specific options
+  -- virtual_lines = {
+  --   -- Only show virtual line diagnostics for the current cursor line
+  --   current_line = true,
+  -- },
+})

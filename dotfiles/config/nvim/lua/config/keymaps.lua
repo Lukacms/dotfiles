@@ -13,6 +13,7 @@ map("n", "//", ":nohlsearch<CR>")
 -- General
 map("n", "<c-s-i>", "<cmd>LazyFormat<cr>")
 map("n", "<leader>lg", "<cmd>lua Snacks.lazygit()<cr>")
+map("n", "<leader>z", "<cmd>TodoTelescope<cr>")
 
 -- Tabs
 map("n", "T", ":tabnew<cr>")
@@ -25,6 +26,7 @@ map("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>")
 map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>")
 map("n", "<C-f>", "<cmd>Telescope current_buffer_fuzzy_find<CR>")
 
+-- Resize buffer size
 -- Resize buffer size
 map("n", "<Up>", "<C-w>2-")
 map("n", "<Down>", "<C-w>2+")
@@ -69,3 +71,9 @@ end)
 
 -- rename item w/ lsp
 map({ "n", "v" }, "<leader>r", vim.lsp.buf.rename)
+
+-- tests
+map("n", "<C-t>o", "<cmd>Neotest output<cr>")
+map("n", "<c-t><c-t>", ':lua require("neotest").summary.toggle()<CR>')
+map("n", "<c-t>r", ':lua require("neotest").run.run()<CR>')
+map("n", "<c-t>R", ':lua require("neotest").run.run(vim.fn.expand("%"))<CR>')

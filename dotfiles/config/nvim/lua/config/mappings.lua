@@ -1,4 +1,5 @@
 local map = require("utils").map
+
 -- set leader key
 vim.g.mapleader = ","
 
@@ -9,8 +10,8 @@ map("n", ";", ":")
 map({ "i", "v" }, "jk", "<Esc>")
 
 -- tab navigation
-map("n", "<Tab>", ":tabprevious<CR>")
-map("n", "<S-Tab>", ":tabnext<CR>")
+map("n", "H", ":tabprevious<CR>")
+map("n", "L", ":tabnext<CR>")
 map("n", "T", ":tabnew<CR>")
 map("n", "C", ":tabclose<CR>")
 
@@ -36,7 +37,3 @@ map('n', 'N', ':cprev<CR>') ]]
 map("n", "<c-t><c-t>", ':lua require("neotest").summary.toggle()<CR>')
 map("n", "<c-t>r", ':lua require("neotest").run.run()<CR>')
 map("n", "<c-t>R", ':lua require("neotest").run.run(vim.fn.expand("%"))<CR>')
-
--- https://github.com/mhinz/vim-galore#dont-lose-selection-when-shifting-sidewards
-map("v", "<", "<gv")
-map("v", ">", ">gv")

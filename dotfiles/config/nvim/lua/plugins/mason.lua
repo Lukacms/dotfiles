@@ -1,9 +1,9 @@
 return {
   {
-    "williamboman/mason.nvim",
-    -- version = "^1.0.0",
+    "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
+        "basedpyright",
         "black",
         "clangd",
         "cmakelang",
@@ -14,12 +14,12 @@ return {
         "elixir-ls",
         "gofumpt",
         "goimports",
-        "golangci-lint",
+        -- "golangci-lint" -- installed on the host machine at a specific version
         "golangci-lint-langserver",
         "gomodifytags",
         "gopls",
+        "impl",
         "hclfmt",
-        "java-language-server",
         "json-lsp",
         "lua-language-server",
         "markdown-toc",
@@ -29,39 +29,31 @@ return {
         "php-cs-fixer",
         "phpactor",
         "phpcs",
-        "prettier",
-        "pyright",
+        -- "pyright", -- installed on the host machine at a specific version
         "ruff",
         "shellcheck",
         "shfmt",
-        "sqlls",
         "sqlfluff",
         "stylua",
         "svelte-language-server",
         "tailwindcss-language-server",
         "yaml-language-server",
       },
+      automatic_installation = false,
     },
   },
   {
-    "mason-org/mason-lspconfig.nvim" --[[ , version = "^1.0.0" ]],
+    "mason-org/mason-lspconfig.nvim",
+    opts = {},
   },
-  {
-    "jay-babu/mason-nvim-dap.nvim",
-    dependencies = "mason.nvim",
-    cmd = { "DapInstall", "DapUninstall" },
-    opts = {
-      ensure_installed = nil,
-
-      -- see mason-nvim-dap README for more information
-      handlers = nil,
-
-      -- You'll need to check that you have the required things installed
-      -- online, please don't ask me how to install them :)
-      automatic_installation = true,
-    },
-    -- mason-nvim-dap is loaded when nvim-dap loads
-    config = function() end,
-  },
+  -- {
+  --   "jay-babu/mason-nvim-dap.nvim",
+  --   opts = {
+  --     ensure_installed = {
+  --       "python",
+  --       "delve",
+  --     },
+  --     automatic_installation = false,
+  --   },
+  -- },
 }
--- You can provide additional configuration to the handlers,
