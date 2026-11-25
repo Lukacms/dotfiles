@@ -3,4 +3,38 @@ config:
   create: true
   dotpath: dotfiles
 dotfiles:
+  d_hypr:
+    src: config/hypr
+    dst: ~/.config/hypr
+  d_hyde:
+    src: config/hyde
+    dst: ~/.config/hyde
+  d_nvim:
+    src: config/nvim
+    dst: ~/.config/nvim
+  d_fish:
+    src: config/fish
+    dst: ~/.config/fish
+  d_rofi:
+    src: config/rofi
+    dst: ~/.config/rofi
+  d_dunst:
+    src: config/dunst
+    dst: ~/.config/dunst
+  d_waybar:
+    src: config/waybar
+    dst: ~/.config/waybar
+  d_fastfetch:
+    src: config/fastfetch
+    dst: ~/.config/fastfetch
 profiles:
+  lukac-hyprland:
+    dotfiles:
+    - d_hypr
+    - d_hyde
+    - d_nvim
+    - d_fish
+    - d_rofi
+    - d_dunst
+    - d_waybar
+    - d_fastfetch

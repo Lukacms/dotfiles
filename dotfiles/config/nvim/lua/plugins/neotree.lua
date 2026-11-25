@@ -1,0 +1,74 @@
+return {
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    dependencies = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-tree/nvim-web-devicons" },
+      { "MunifTanjim/nui.nvim" },
+    },
+    keys = {
+      { "<leader>e", "<cmd>Neotree toggle<CR>" },
+      { "<leader>fe", false },
+      { "<leader>fE", false },
+      { "<leader>E", false },
+      { "<leader>ge", false },
+      { "<leader>be", false },
+    },
+    opts = {
+      close_if_last_window = false,
+      popup_border_style = "rounded",
+      enable_git_status = true,
+      enable_diagnostics = true,
+      sort_case_insensitive = true, -- used when sorting files and directories in the tree
+      window = {
+        mappings = {
+          ["o"] = "open_with_window_picker",
+        },
+      },
+      filesystem = {
+        filtered_items = {
+          visible = false, -- when true, they will just be displayed differently than normal items
+          hide_dotfiles = true,
+          hide_gitignored = true,
+          hide_by_name = {
+            "build",
+          },
+          hide_by_pattern = {
+            "*.o",
+          },
+          always_show = { -- remains visible even if other settings would normally hide it
+            ".gitignore",
+          },
+          always_show_by_pattern = { -- uses glob style patterns
+            ".env*",
+            ".*.env",
+          },
+          never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
+            "node_modules",
+          },
+          never_show_by_pattern = { -- uses glob style patterns
+          },
+        },
+      },
+    },
+  },
+  {
+    "s1n7ax/nvim-window-picker",
+    version = "2.*",
+    config = function()
+      require("window-picker").setup({
+        filter_rules = {
+          include_current_win = false,
+          autoselect_one = true,
+          -- filter using buffer options
+          bo = {
+            -- if the file type is one of following, the window will be ignored
+            filetype = { "neo-tree", "neo-tree-popup", "notify" },
+            -- if the buffer type is one of following, the window will be ignored
+            buftype = { "terminal", "quickfix" },
+          },
+        },
+      })
+    end,
+  },
+}

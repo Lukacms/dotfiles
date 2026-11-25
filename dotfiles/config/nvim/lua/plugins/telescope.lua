@@ -8,7 +8,7 @@ return {
     },
     keys = {
       { "<C-p>", "<cmd>Telescope find_files<CR>" },
-      { "§", "<cmd>Telescope live_grep<CR>" },
+      { "@", "<cmd>Telescope live_grep<CR>" },
       { "<C-s>", "<cmd>Telescope lsp_document_symbols<CR>" },
       { "<C-f>", "<cmd>Telescope current_buffer_fuzzy_find<CR>" },
     },

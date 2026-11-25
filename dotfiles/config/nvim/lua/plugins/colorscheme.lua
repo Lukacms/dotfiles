@@ -3,7 +3,7 @@ return {
     "Mofiqul/vscode.nvim",
     priority = 1000,
     opts = {
-      transparent = false,
+      transparent = true,
       italic_comments = true,
       color_overrides = {
         vscFront = "#d4d4d4",

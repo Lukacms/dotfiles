@@ -34,8 +34,8 @@ opt.scrolloff = 999
 opt.sidescrolloff = 8
 opt.colorcolumn = "80"
 opt.mouse = "c" -- disable mouse
+opt.wrap = true -- Display long lines as multiple lines
 opt.linebreak = true
-opt.wrap = true
 
 -- Edition --------------------------------------------------------------------
 
@@ -45,12 +45,13 @@ opt.errorbells = false
 opt.fixeol = false
 opt.eol = false
 opt.binary = true
+vim.g.editorconfig = true
 
 -- Search ---------------------------------------------------------------------
 
 opt.inccommand = "split"
 opt.wildignorecase = true
-opt.wildignore:append({ "*.o", "*.gcno", "*.gcda", "node_modules", ".git" })
+opt.wildignore:append({ "*.o", "*.gcno", "*.gcda", ".git" })
 opt.autochdir = false
 
 -- Backup ---------------------------------------------------------------------
@@ -61,3 +62,17 @@ opt.swapfile = false
 opt.undodir = vim.fn.expand("~/.nvim/tmp/undo/")
 opt.backupdir = vim.fn.expand("~/.nvim/tmp/backup/")
 opt.directory = vim.fn.expand("~/.nvim/tmp/swap/")
+
+-- Enabled ---------------------------------------------------------------------
+vim.g.lazyvim_picker = "telescope"
+
+vim.diagnostic.config({
+  -- Use the default configuration
+  -- virtual_lines = true
+
+  -- Alternatively, customize specific options
+  virtual_lines = {
+    -- Only show virtual line diagnostics for the current cursor line
+    current_line = true,
+  },
+})

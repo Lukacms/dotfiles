@@ -1,0 +1,47 @@
+$HOME/.config/hypr/themes/theme.conf|> $HOME/.config/hypr/themes/colors.conf
+
+$GTK_THEME= Otis
+$ICON_THEME= Black-BigSur
+$COLOR_SCHEME= prefer-dark
+$CURSOR_THEME= AncientFuturism
+$CURSOR_SIZE= 24
+$FONT= Electrolize
+$DOCUMENT_FONT= Electrolize
+$BAR_FONT= Electrolize
+$NOTIFICATION_FONT= Electrolize
+$MENU_FONT= Electrolize
+
+general { 
+  gaps_in = 8
+  gaps_out = 15
+  col.active_border = rgba(AAD5F0ff) rgba(294952ff) 45deg
+  col.inactive_border = rgba(09101Cff) rgba(3A526Bff) 45deg
+  border_size = 2
+  resize_on_border = true
+  allow_tearing = true
+  layout = dwindle
+}
+
+decoration {
+  rounding = 15
+  active_opacity = 1.0
+  inactive_opacity = 0.8
+  shadow {
+    enabled = true
+    ignore_window = true
+    offset = 0 0
+    range = 15
+    render_power = 1
+    color = 0xaa000000
+  }
+  blur {
+    enabled = yes
+    size = 6
+    passes = 3
+    new_optimizations = on
+    ignore_opacity = on
+    xray = false
+  }
+}
+
+layerrule=unset,waybar
